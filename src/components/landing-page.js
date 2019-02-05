@@ -2,13 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-import LoginForm from './login-form';
-
 import '../styles/landing-page.css';
 
 const SignupButton = () => {
   return (
-    <Link to="/signup">
+    <Link to="/register">
       <button>Signup</button>
     </Link>
   );
@@ -36,6 +34,7 @@ export function LandingPage(props) {
           </p>
           <p>The secret to a strong healthy habit is consistency.</p>
           <p>Use Meditated to keep track of your meditation habit.</p>
+
           <SignupButton />
         </div>
       </section>

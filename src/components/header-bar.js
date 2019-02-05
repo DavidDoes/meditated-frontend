@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import { clearAuth } from '../actions/auth';
 import { clearAuthToken } from '../local-storage';
 
@@ -13,9 +15,15 @@ export class HeaderBar extends React.Component {
 
   render() {
     // Only render the log out button if we are logged in
-    let logOutButton;
+    let logInOrOut;
     if (this.props.loggedIn) {
-      logOutButton = <button onClick={() => this.logOut()}>Log out</button>;
+      logInOrOut = <button onClick={() => this.logOut()}>Log out</button>;
+    } else {
+      logInOrOut = (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      );
     }
     return (
       <header className="navbar">
@@ -25,20 +33,22 @@ export class HeaderBar extends React.Component {
           </div> */}
           <div className="navbar-logo">
             <img id="logo" alt="logo of a lotus flower" src={require('../img/lotus_90.png')} />
-            <a href="/">Meditated</a>{' '}
+            <Link to="/">Meditated</Link>
           </div>
           <div className="spacer" />
           <div className="navbar-nav-items">
             <ul>
+              {/* <li>
+                <Link to="/login">Login</Link>
+              </li> */}
+              {logInOrOut}
               <li>
-                <a href="/login">Login</a>
+                <Link to="/new-moment">New Moment</Link>
+                {/* <a href="/new-moment">New Moment</a> */}
               </li>
-              {logOutButton}
               <li>
-                <a href="/new-moment">New Moment</a>
-              </li>
-              <li>
-                <a href="/moments">My Moments</a>
+                <Link to="/moments">My Moments</Link>
+                {/* <a href="/moments">My Moments</a> */}
               </li>
             </ul>
           </div>
