@@ -16,6 +16,7 @@
 }
 
 .fa-angle-down {
+  cursor: pointer;
   color: #9784b5;
   font-size: 4em;
 }
