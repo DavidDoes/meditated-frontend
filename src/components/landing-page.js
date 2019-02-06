@@ -8,7 +8,7 @@ import '../styles/landing-page.css';
 const SignupButton = () => {
   return (
     <Link to="/register">
-      <button>Signup</button>
+      <button>Get Started for Free</button>
     </Link>
   );
 };
@@ -25,6 +25,12 @@ export function LandingPage(props) {
     });
   };
 
+  const scrollUp = () => {
+    document.getElementById('root').scrollIntoView({
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <div>
       <section id="tagline">
@@ -37,6 +43,8 @@ export function LandingPage(props) {
       </section>
 
       <section id="about">
+        <i onClick={scrollUp} class="fas fa-angle-up" />
+
         <div>
           <p>The secret to a strong healthy habit is consistency.</p>
           <p>Use Meditated to keep track of your meditation habit.</p>

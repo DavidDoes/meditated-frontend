@@ -1,6 +1,5 @@
 #tagline {
   display: flex;
-  color: #4e3d6a;
   width: 100%;
   min-height: 70vh;
   max-height: 100vh;
@@ -15,23 +14,28 @@
   flex: 1 0 5%;
 }
 
-.fa-angle-down {
+.fa-angle-down,
+.fa-angle-up {
   cursor: pointer;
   color: #9784b5;
   font-size: 4em;
 }
 
+.fa-angle-up {
+}
+
 #about {
   display: flex;
   width: 100%;
-  min-height: 200px;
-  height: auto;
+  min-height: 70vh;
+  max-height: 100vh;
+  align-items: center;
   flex-direction: column;
 }
 
 #about div {
   display: flex;
-  height: 100vh;
+  height: 70vh;
   max-width: 100%;
   justify-content: center;
   align-items: center;
