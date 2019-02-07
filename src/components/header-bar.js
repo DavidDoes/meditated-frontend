@@ -39,17 +39,12 @@ export class HeaderBar extends React.Component {
           <div className="spacer" />
           <div className="navbar-nav-items">
             <ul>
-              {/* <li>
-                <Link to="/login">Login</Link>
-              </li> */}
               {logInOrOut}
               <li>
                 <Link to="/new-moment">New Moment</Link>
-                {/* <a href="/new-moment">New Moment</a> */}
               </li>
               <li>
-                <Link to="/moments">My Moments</Link>
-                {/* <a href="/moments">My Moments</a> */}
+                <Link to="/dashboard">My Moments</Link>
               </li>
             </ul>
           </div>
