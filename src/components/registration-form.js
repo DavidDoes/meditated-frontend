@@ -6,6 +6,8 @@ import Input from './input';
 import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
 import '../styles/login-form.css';
 
+import LoginButton from './login-button';
+
 const passwordLength = length({ min: 10, max: 72 });
 const matchesPassword = matches('password');
 
@@ -29,7 +31,9 @@ export class RegistrationForm extends React.Component {
         <label htmlFor="username">Username</label>
         <Field component={Input} type="text" name="username" />
 
-        <label htmlFor="password" type="password" name="password" />
+        <label htmlFor="password" type="password" name="password">
+          Create a password
+        </label>
         <Field
           component={Input}
           type="text"
@@ -37,7 +41,9 @@ export class RegistrationForm extends React.Component {
           validate={[required, passwordLength, isTrimmed]}
         />
 
-        <label htmlFor="passwordConfirm" type="password" name="passwordConfirm" />
+        <label htmlFor="passwordConfirm" type="password" name="passwordConfirm">
+          Confirm Password
+        </label>
         <Field
           component={Input}
           type="text"
@@ -48,6 +54,7 @@ export class RegistrationForm extends React.Component {
         <button type="submit" disabled={this.props.pristine || this.props.submitting}>
           Register
         </button>
+        <LoginButton />
       </form>
     );
   }

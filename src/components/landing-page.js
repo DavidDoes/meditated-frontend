@@ -1,16 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+
+import RegisterButton from './register-button';
 
 import '../styles/landing-page.css';
-
-const SignupButton = () => {
-  return (
-    <Link to="/register">
-      <button>Get Started for Free</button>
-    </Link>
-  );
-};
 
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -48,7 +42,7 @@ export function LandingPage(props) {
           <p>The secret to a strong healthy habit is consistency.</p>
           <p>Use Meditated to keep track of your meditation habit.</p>
 
-          <SignupButton />
+          <RegisterButton />
         </div>
       </section>
     </div>

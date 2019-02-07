@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import LoginForm from './login-form';
 import '../styles/login-page.css';
 
-export function RegistrationPage(props) {
+export function LoginPage(props) {
   // If we are logged in (which happens automatically when registration
   // is successful) redirect to the user's dashboard
   if (props.loggedIn) {
@@ -15,7 +15,6 @@ export function RegistrationPage(props) {
     <section id="form-section">
       <h2 className="page-title">Login</h2>
       <LoginForm />
-      <Link to="/">Login</Link>
     </section>
   );
 }
@@ -24,4 +23,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default connect(mapStateToProps)(RegistrationPage);
+export default connect(mapStateToProps)(LoginPage);
