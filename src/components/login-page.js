@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 
-import RegistrationForm from './registration-form';
+import LoginForm from './login-form';
 import '../styles/login-page.css';
 
 export function RegistrationPage(props) {
@@ -13,8 +13,8 @@ export function RegistrationPage(props) {
   }
   return (
     <section id="form-section">
-      <h2 className="page-title">Signup</h2>
-      <RegistrationForm />
+      <h2 className="page-title">Login</h2>
+      <LoginForm />
       <Link to="/">Login</Link>
     </section>
   );

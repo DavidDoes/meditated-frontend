@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { animateScroll, Link as animatedLink } from 'react-scroll';
 
 import '../styles/landing-page.css';
 
