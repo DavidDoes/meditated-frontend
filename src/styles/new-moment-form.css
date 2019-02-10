@@ -1,0 +1,29 @@
+.form-container {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.form-container p {
+  font-size: 18px !important;
+}
+
+label {
+  font-size: 18px !important;
+  padding-right: 1em;
+}
+
+input {
+  text-align: center;
+}
+
+.option {
+  float: left;
+  margin: auto 1.25em;
+}
+
+button {
+  display: inline-block;
+  margin: 5px auto;
+}

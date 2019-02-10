@@ -13,6 +13,26 @@ body {
   color: #4e3d6a;
 }
 
+*,
+*:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+input:required {
+  box-shadow: none;
+}
+input:invalid {
+  box-shadow: none;
+}
+
+input:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
 .app {
   height: 100%;
 }

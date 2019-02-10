@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import { Link } from 'react-router-dom';
 import Input from './input';
 import { login } from '../actions/auth';
 import { required, nonEmpty } from '../validators';
@@ -8,6 +7,10 @@ import { required, nonEmpty } from '../validators';
 import RegisterButton from './register-button';
 
 import '../styles/login-form.css';
+
+function handleSubmit() {
+  console.log('logging in');
+}
 export class LoginForm extends React.Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));
@@ -44,7 +47,9 @@ export class LoginForm extends React.Component {
           id="password"
           validate={[required, nonEmpty]}
         />
-        <button disabled={this.props.pristine || this.props.submitting}>Log in</button>
+        <button onSubmit={handleSubmit} disabled={this.props.pristine || this.props.submitting}>
+          Log in
+        </button>
         <RegisterButton />
       </form>
     );

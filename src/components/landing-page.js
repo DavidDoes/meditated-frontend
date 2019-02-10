@@ -29,14 +29,14 @@ export function LandingPage(props) {
       <section id="tagline">
         <h1>simplify your meditation</h1>
         <p>simple, distraction-free meditation tracking</p>
-        <i onClick={scrollDown} class="fas fa-angle-down" />
+        <i onClick={scrollDown} className="fas fa-angle-down" />
         {/* <animatedLink target={'#about'} smooth={true} duration={6000}>
-          <i class="fas fa-angle-down" />
+          <i className="fas fa-angle-down" />
         </animatedLink> */}
       </section>
 
       <section id="about">
-        <i onClick={scrollUp} class="fas fa-angle-up" />
+        <i onClick={scrollUp} className="fas fa-angle-up" />
 
         <div>
           <p>The secret to a strong healthy habit is consistency.</p>
