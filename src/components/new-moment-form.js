@@ -2,6 +2,7 @@ import React from 'react';
 
 import '../styles/new-moment-form.css';
 
+// stateless form
 export default class NewMoment extends React.Component {
   render() {
     let successMessage;
