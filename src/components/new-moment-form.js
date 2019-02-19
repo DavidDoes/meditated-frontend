@@ -26,12 +26,12 @@ export default class NewMoment extends React.Component {
             </div>
 
             <div className="location">
-              <label htmlFor="location">Where?</label>
+              <label htmlFor="location">Location</label>
               <input type="text" name="location" placeholder="Bedroom" required />
             </div>
 
             <div className="date">
-              <label htmlFor="date">When?</label>
+              <label htmlFor="date">Date & Time</label>
               <input type="date" name="date" required />
               <input type="time" name="time" required />
             </div>
