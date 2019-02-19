@@ -15,7 +15,6 @@ export const postMomentToList = moment => ({
 });
 
 export const newMoment = (authToken, moment) => dispatch => {
-  console.log('hello from dispatch newMoment');
   fetch(`${API_BASE_URL}/moments`, {
     body: JSON.stringify(moment),
     method: 'POST',
@@ -26,13 +25,11 @@ export const newMoment = (authToken, moment) => dispatch => {
   })
     .then(res => {
       if (!res.ok) {
-        console.log('res not ok');
         return Promise.reject(res.statusText);
       }
       return res.json();
     })
     .then(json => {
-      console.log('dispatched postMomentToList');
       dispatch(postMomentToList(json));
     })
     .catch(err => console.error(err));

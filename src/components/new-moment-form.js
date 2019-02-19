@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import '../styles/new-moment-form.css';
 import { newMoment } from '../actions/moments';
+import SuccessAlert from './success-alert.js';
 
 // stateless form
 export class NewMoment extends React.Component {
@@ -14,15 +16,11 @@ export class NewMoment extends React.Component {
       time: '',
       location: '',
       mental: '',
-      environmental: ''
+      environmental: '',
+      alert_message: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
   }
 
   handleInput(event, key) {
@@ -34,8 +32,6 @@ export class NewMoment extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log('hello');
-
     const momentObj = {
       minutes: this.state.minutes,
       date: this.state.date,
@@ -45,7 +41,8 @@ export class NewMoment extends React.Component {
       environmental: this.state.environmental
     };
     this.props.dispatch(newMoment(this.props.authToken, momentObj));
-    this.clearForm(event);
+    this.setState({ alert_message: 'You Meditated!' });
+    this.clearForm(event); // not working
   }
 
   clearForm(event) {
@@ -60,21 +57,10 @@ export class NewMoment extends React.Component {
       requiredInput = <div className="">Required</div>;
     }
 
-    let successMessage;
-    if (this.props.submitSucceeded) {
-      successMessage = <div className="message-success">Congratulations! You Meditated!</div>;
-    }
-
-    let errorMessage;
-    if (this.props.error) {
-      errorMessage = <div className="message-error">{this.props.error}</div>;
-    }
-
     return (
       <section id="form-section">
         <form id="record-moment" onSubmit={this.handleSubmit} ref="form">
-          {successMessage}
-          {errorMessage}
+          {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
 
           <div className="form-container">
             {requiredInput}
