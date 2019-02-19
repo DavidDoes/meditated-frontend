@@ -7,7 +7,7 @@ let currentState = store.getState();
 
 const dummyData = [
   {
-    duration: '10',
+    minutes: '10',
     location: 'Bedroom',
     date: 'January 2, 2019',
     time: '10:00 AM',
@@ -15,7 +15,7 @@ const dummyData = [
     environmental: '1'
   },
   {
-    duration: '5',
+    minutes: '5',
     location: 'Living Room',
     date: 'January 3, 2019',
     time: '8:00 AM',
@@ -23,7 +23,7 @@ const dummyData = [
     environmental: '1'
   },
   {
-    duration: '5',
+    minutes: '5',
     location: 'Break Room',
     date: 'January 3, 2019',
     time: '12:05 PM',
@@ -31,7 +31,7 @@ const dummyData = [
     environmental: '4'
   },
   {
-    duration: '15',
+    minutes: '15',
     location: 'Living Room',
     date: 'January 3, 2019',
     time: '5:00 PM',
@@ -39,7 +39,7 @@ const dummyData = [
     environmental: '1'
   },
   {
-    duration: '20',
+    minutes: '20',
     location: 'Bedroom',
     date: 'January 4, 2019',
     time: '6:00 PM',
@@ -47,7 +47,7 @@ const dummyData = [
     environmental: '1'
   },
   {
-    duration: '5',
+    minutes: '5',
     location: 'Work Desk',
     date: 'January 5, 2019',
     time: '9:30 AM',

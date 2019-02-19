@@ -30,7 +30,7 @@ export function LandingPage(props) {
         <h1>simplify your meditation</h1>
         <p>simple, distraction-free meditation tracking</p>
         <i onClick={scrollDown} className="fas fa-angle-down" />
-        {/* <animatedLink target={'#about'} smooth={true} duration={6000}>
+        {/* <animatedLink target={'#about'} smooth={true} minutes={6000}>
           <i className="fas fa-angle-down" />
         </animatedLink> */}
       </section>
