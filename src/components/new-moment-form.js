@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 import '../styles/new-moment-form.css';
 import { newMoment } from '../actions/moments';
 import SuccessAlert from './success-alert.js';
+import { API_BASE_URL } from '../config';
 
 // stateless form
 export class NewMoment extends React.Component {
@@ -31,6 +33,7 @@ export class NewMoment extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.setState({ alert_message: 'success' });
 
     const momentObj = {
       minutes: this.state.minutes,
@@ -40,8 +43,13 @@ export class NewMoment extends React.Component {
       mental: this.state.mental,
       environmental: this.state.environmental
     };
-    this.props.dispatch(newMoment(this.props.authToken, momentObj));
-    this.setState({ alert_message: 'You Meditated!' });
+    // this.props.dispatch(newMoment(this.props.authToken, momentObj));
+    axios.post(`${API_BASE_URL}/moments`, momentObj).then(res => {
+      this.setState({
+        alert_message: 'success'
+      });
+    });
+
     this.clearForm(event); // not working
   }
 
