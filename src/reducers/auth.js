@@ -21,6 +21,7 @@ export default function reducer(state = initialState, action) {
     });
   } else if (action.type === CLEAR_AUTH) {
     return Object.assign({}, state, {
+      isAuthenticated: false,
       authToken: null,
       currentUser: null
     });
