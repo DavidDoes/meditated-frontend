@@ -33,7 +33,7 @@ export class NewMoment extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ alert_message: 'success' });
+    // this.setState({ alert_message: 'success' });
 
     const momentObj = {
       minutes: this.state.minutes,
@@ -43,20 +43,20 @@ export class NewMoment extends React.Component {
       mental: this.state.mental,
       environmental: this.state.environmental
     };
-    // this.props.dispatch(newMoment(this.props.authToken, momentObj));
-    axios.post(`${API_BASE_URL}/moments`, momentObj).then(res => {
-      this.setState({
-        alert_message: 'success'
-      });
-    });
+    this.props.dispatch(newMoment(this.props.authToken, momentObj)).then(history.push('/dashbard'));
+    // axios.post(`${API_BASE_URL}/moments`, momentObj).then(res => {
+    //   this.setState({
+    //     alert_message: 'success'
+    //   });
+    // });
 
-    this.clearForm(event); // not working
+    // this.clearForm(event); // not working
   }
 
-  clearForm(event) {
-    event.preventDefault();
-    this.refs.form.reset();
-  }
+  // clearForm(event) {
+  //   event.preventDefault();
+  //   this.refs.form.reset();
+  // }
 
   render() {
     // set all inputs to required
