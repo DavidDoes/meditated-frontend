@@ -44,11 +44,13 @@ export class NewMoment extends React.Component {
       environmental: this.state.environmental
     };
     this.props.dispatch(newMoment(this.props.authToken, momentObj));
-    this.props.history.push('/dashboard');
+    // this.props.history.push('/dashboard');
+
     // axios.post(`${API_BASE_URL}/moments`, momentObj).then(res => {
     //   this.setState({
     //     alert_message: 'success'
     //   });
+    //   console.log(res);
     // });
 
     // this.clearForm(event); // not working

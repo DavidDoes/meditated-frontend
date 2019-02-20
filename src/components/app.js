@@ -8,6 +8,7 @@ import Dashboard from './dashboard';
 import RegistrationPage from './registration-page';
 import NewMomentPage from './new-moment-page';
 import LoginPage from './login-page';
+import PrivateRoute from './private-route';
 import { refreshAuthToken } from '../actions/auth';
 
 import '../styles/app.css';
@@ -48,8 +49,8 @@ export class App extends React.Component {
         <HeaderBar />
         <main>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Route exact path="/new-moment" component={NewMomentPage} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/new-moment" component={NewMomentPage} />
           <Route exact path="/register" component={RegistrationPage} />
           <Route exact path="/login" component={LoginPage} />
         </main>
