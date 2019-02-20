@@ -26,6 +26,28 @@ export class HeaderBar extends React.Component {
         </li>
       );
     }
+
+    // const { isAuthenticated } = this.props.auth;
+
+    const authLinks = (
+      <ul>
+        <li>
+          <Link to="/new-moment">New Moment</Link>
+        </li>
+        <li>
+          <Link to="/dashboard">My Moments</Link>
+        </li>
+      </ul>
+    );
+
+    const guestLinks = (
+      <ul>
+        <li>
+          <Link to="/register">Sign up</Link>
+        </li>
+      </ul>
+    );
+
     return (
       <header className="navbar">
         <nav className="navbar-navigation">
@@ -38,15 +60,9 @@ export class HeaderBar extends React.Component {
           </div>
           <div className="spacer" />
           <div className="navbar-nav-items">
-            <ul>
-              {logInOrOut}
-              <li>
-                <Link to="/new-moment">New Moment</Link>
-              </li>
-              <li>
-                <Link to="/dashboard">My Moments</Link>
-              </li>
-            </ul>
+            {logInOrOut}
+            {/* <div className="navlinks">{isAuthenticated ? authLinks : guestLinks}</div> */}
+            <div className="navbar-nav-items">{authLinks}</div>
           </div>
         </nav>
       </header>
