@@ -4,7 +4,7 @@ class SuccessAlert extends Component {
   render() {
     return (
       <div className="alert-success">
-        <p>You Meditated!</p>
+        <h3>You Meditated!</h3>
       </div>
     );
   }

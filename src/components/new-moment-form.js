@@ -1,10 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../styles/new-moment-form.css';
-import { newMoment } from '../actions/moments';
-import SuccessAlert from './success-alert.js';
-import store from '../store';
 import axios from 'axios';
+import SuccessAlert from './success-alert.js';
+import { API_BASE_URL } from '../config';
 
 // stateless form
 export class NewMoment extends React.Component {
@@ -31,7 +30,7 @@ export class NewMoment extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // this.setState({ alert_message: 'success' });
+    this.setState({ alert_message: 'success' });
 
     const momentObj = {
       minutes: this.state.minutes,
@@ -41,15 +40,13 @@ export class NewMoment extends React.Component {
       mental: this.state.mental,
       environmental: this.state.environmental
     };
-    this.props.dispatch(newMoment(this.props.authToken, momentObj));
-
-    // this.clearForm(event); // not working
+    // this.props.dispatch(newMoment(this.props.authToken, momentObj));
+    axios.post(`${API_BASE_URL}/moments`, momentObj).then(res => {
+      this.setState({
+        alert_message: 'success'
+      });
+    });
   }
-
-  // clearForm(event) {
-  //   event.preventDefault();
-  //   this.refs.form.reset();
-  // }
 
   render() {
     // set all inputs to required
@@ -61,8 +58,6 @@ export class NewMoment extends React.Component {
     return (
       <section id="form-section">
         <form id="record-moment" onSubmit={this.handleSubmit} ref="form">
-          {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
-
           <div className="form-container">
             {requiredInput}
             <div className="minutes">
@@ -148,7 +143,7 @@ export class NewMoment extends React.Component {
               </div>
             </fieldset>
           </div>
-
+          {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
           <button type="reset">Reset</button>
           <button type="submit">Submit</button>
         </form>
