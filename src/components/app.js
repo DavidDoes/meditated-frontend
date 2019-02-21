@@ -49,6 +49,7 @@ export class App extends React.Component {
         <HeaderBar />
         <main>
           <Switch>
+            {/* allows for our redirect; use `exact` in routes, otherwise all routes match `/`, only showing that component */}
             <Route exact path="/" component={LandingPage} />
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute exact path="/new-moment" component={NewMomentPage} />

@@ -1,12 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
-import axios from 'axios';
-
 import '../styles/new-moment-form.css';
 import { newMoment } from '../actions/moments';
 import SuccessAlert from './success-alert.js';
-import { API_BASE_URL } from '../config';
+import store from '../store';
+import axios from 'axios';
 
 // stateless form
 export class NewMoment extends React.Component {
@@ -44,14 +42,6 @@ export class NewMoment extends React.Component {
       environmental: this.state.environmental
     };
     this.props.dispatch(newMoment(this.props.authToken, momentObj));
-    // this.props.history.push('/dashboard');
-
-    // axios.post(`${API_BASE_URL}/moments`, momentObj).then(res => {
-    //   this.setState({
-    //     alert_message: 'success'
-    //   });
-    //   console.log(res);
-    // });
 
     // this.clearForm(event); // not working
   }
