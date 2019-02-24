@@ -8,9 +8,6 @@ import RegisterButton from './register-button';
 
 import '../styles/login-form.css';
 
-function handleSubmit() {
-  console.log('logging in');
-}
 export class LoginForm extends React.Component {
   onSubmit(values) {
     return this.props.dispatch(login(values.username, values.password));

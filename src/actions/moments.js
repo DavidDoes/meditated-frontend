@@ -46,12 +46,33 @@ export const getMoments = authToken => dispatch => {
     }
   })
     .then(res => {
+      console.log(res);
       return res.json();
     })
     .then(json => {
+      console.log('json:', json);
       dispatch(setMomentsList(json));
     })
     .catch(err => console.error(err));
 };
 
 // ===== PUT MOMENT =====
+
+export const updateMoment = authToken => dispatch => {
+  fetch(`${API_BASE_URL}/moments/${updateMoment.id}`, {
+    body: JSON.stringify(updateMoment),
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      console.log(res.json());
+      return res.json();
+    })
+    .catch(err => console.error(err));
+};

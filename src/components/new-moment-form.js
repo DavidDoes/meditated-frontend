@@ -17,7 +17,7 @@ export class NewMoment extends React.Component {
       alert_message: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
+    // this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(event, key) {
@@ -73,6 +73,7 @@ export class NewMoment extends React.Component {
                 placeholder="Bedroom"
                 value={this.state.location}
                 onChange={e => this.handleInput(e, 'location')}
+                maxLeng="25"
               />
             </div>
 
