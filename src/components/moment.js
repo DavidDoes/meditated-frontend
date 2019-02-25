@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import UpdateMoment from './updateMoment';
 // import { deleteMoment } from '../actions/moments'
 
-export class Moment extends React.Component {
+class Moment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

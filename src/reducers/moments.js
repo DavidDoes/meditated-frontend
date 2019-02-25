@@ -1,7 +1,7 @@
 import {
   POST_MOMENT,
   GET_MOMENTS,
-  DELETE_MOMENT_SUCCESS,
+  // DELETE_MOMENT_SUCCESS,
   UPDATE_MOMENT_SUCCESS
 } from '../actions/moments';
 
@@ -23,15 +23,15 @@ const reducer = (state = initialState, action) => {
     });
   }
 
-  if (action.type === DELETE_MOMENT_SUCCESS) {
-    let momentsArr = [...state.moments];
-    let deletedItem = momentsArr.findIndex(item => item.id === action.id);
+  // if (action.type === DELETE_MOMENT_SUCCESS) {
+  //   let momentsArr = [...state.moments];
+  //   let deletedItem = momentsArr.findIndex(item => item.id === action.id);
 
-    momentsArr.splice(deletedItem, 1);
-    return Object.assign({}, state, {
-      moments: momentsArr
-    });
-  }
+  //   momentsArr.splice(deletedItem, 1);
+  //   return Object.assign({}, state, {
+  //     moments: momentsArr
+  //   });
+  // }
 
   if (action.type === UPDATE_MOMENT_SUCCESS) {
     let momentsArr = [...state.moments];

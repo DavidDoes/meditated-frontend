@@ -4,12 +4,14 @@ import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from './local-storage';
 import authReducer from './reducers/auth';
+import momentReducer from './reducers/moments';
 import protectedDataReducer from './reducers/protected-data';
 import { setAuthToken, refreshAuthToken } from './actions/auth';
 
 const store = createStore(
   combineReducers({
     // root: rootReducer,
+    moments: momentReducer,
     form: formReducer,
     auth: authReducer,
     protectedData: protectedDataReducer

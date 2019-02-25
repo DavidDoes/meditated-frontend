@@ -1,6 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
@@ -13,7 +12,7 @@ import { refreshAuthToken } from '../actions/auth';
 
 import '../styles/app.css';
 
-export class App extends React.Component {
+export default class App extends React.Component {
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
       // When we are logged in, refresh the auth token periodically
@@ -62,10 +61,10 @@ export class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  hasAuthToken: state.auth.authToken !== null,
-  loggedIn: state.auth.currentUser !== null
-});
+// const mapStateToProps = state => ({
+//   hasAuthToken: state.auth.authToken !== null,
+//   loggedIn: state.auth.currentUser !== null
+// });
 
 // Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
-export default withRouter(connect(mapStateToProps)(App));
+// export default withRouter(connect(mapStateToProps)(App));

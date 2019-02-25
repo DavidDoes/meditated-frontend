@@ -46,11 +46,11 @@ export const getMoments = authToken => dispatch => {
     }
   })
     .then(res => {
-      console.log(res);
+      console.log('getMoments() res:', res);
       return res.json();
     })
     .then(json => {
-      console.log('json:', json);
+      console.log('getMoments() json:', json);
       dispatch(setMomentsList(json));
     })
     .catch(err => console.error(err));
@@ -76,3 +76,11 @@ export const updateMoment = authToken => dispatch => {
     })
     .catch(err => console.error(err));
 };
+
+export const UPDATE_MOMENT_SUCCESS = 'UPDATE_MOMENT_SUCCESS';
+export const updateMomentSucess = data => ({
+  type: UPDATE_MOMENT_SUCCESS,
+  values: data
+});
+
+// ===== DELETE MOMENT =====
