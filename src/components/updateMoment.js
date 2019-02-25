@@ -42,58 +42,59 @@ export class UpdateMoment extends React.Component {
 
     return (
       <div className="moment">
-        <form className={styles.updateForm} onSubmit={this.handleSubmit} />
-        {requiredInput}
-        return (
-        <div className="divTableRow">
-          <input
-            className=""
-            name="date"
-            type="date"
-            ref={input => (this.textInput = input)}
-            placeholder=""
-            value={this.state.date}
-            onChange={e => this.handleInput(e, 'date')}
-          />
-          <input
-            className=""
-            name="time"
-            type="time"
-            ref={input => (this.textInput = input)}
-            placeholder=""
-            value={this.state.time}
-            onChange={e => this.handleInput(e, 'time')}
-          />
-          <input
-            className=""
-            name="minutes"
-            type="number"
-            maxLength="3"
-            ref={input => (this.textInput = input)}
-            placeholder=""
-            value={this.state.minutes}
-            onChange={e => this.handleInput(e, 'minutes')}
-          />
-          <input
-            className=""
-            name="location"
-            type="text"
-            maxLength="25"
-            ref={input => (this.textInput = input)}
-            placeholder=""
-            value={this.state.location}
-          />
-          <span className="divTableCell">
-            <button type="submit">Save</button>
-            <button
-              onClick={() => {
-                this.props.toggleShowFields();
-              }}
-            >
-              Cancel
-            </button>
-          </span>
-        </div>
+        <form className={styles.updateForm} onSubmit={this.handleSubmit}>
+          {requiredInput}
+          <div className="divTableRow">
+            <input
+              className=""
+              name="date"
+              type="date"
+              ref={input => (this.textInput = input)}
+              placeholder={this.state.date}
+              value={this.state.date}
+              onChange={e => this.handleInput(e, 'date')}
+            />
+            <input
+              className=""
+              name="time"
+              type="time"
+              ref={input => (this.textInput = input)}
+              placeholder={this.state.time}
+              value={this.state.time}
+              onChange={e => this.handleInput(e, 'time')}
+            />
+            <input
+              className=""
+              name="minutes"
+              type="number"
+              maxLength="3"
+              ref={input => (this.textInput = input)}
+              placeholder={this.state.minutes}
+              value={this.state.minutes}
+              onChange={e => this.handleInput(e, 'minutes')}
+            />
+            <input
+              className=""
+              name="location"
+              type="text"
+              maxLength="25"
+              ref={input => (this.textInput = input)}
+              placeholder=""
+              value={this.state.location}
+              onChange={e => this.handleInput(e, 'location')}
+            />
+            <span className="divTableCell">
+              <button type="submit">Save</button>
+              <button
+                onClick={() => {
+                  this.props.toggleShowFields();
+                }}
+              >
+                Cancel
+              </button>
+            </span>
+          </div>
+        </form>
       </div>
     );
   }

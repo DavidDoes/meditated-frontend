@@ -58,7 +58,7 @@ export const getMoments = authToken => dispatch => {
 
 // ===== PUT MOMENT =====
 
-export const updateMoment = authToken => dispatch => {
+export const updateMoment = (authToken, updateMoment) => dispatch => {
   fetch(`${API_BASE_URL}/moments/${updateMoment.id}`, {
     body: JSON.stringify(updateMoment),
     method: 'PUT',
@@ -71,7 +71,6 @@ export const updateMoment = authToken => dispatch => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
-      console.log(res.json());
       return res.json();
     })
     .catch(err => console.error(err));

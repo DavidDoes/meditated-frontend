@@ -8,16 +8,15 @@ export class NewMoment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      minutes: '',
       date: '',
       time: '',
+      minutes: '',
       location: '',
       mental: '',
       environmental: '',
       alert_message: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(event, key) {
@@ -31,9 +30,9 @@ export class NewMoment extends React.Component {
     this.setState({ alert_message: 'success' });
 
     const momentObj = {
-      minutes: this.state.minutes,
       date: this.state.date,
       time: this.state.time,
+      minutes: this.state.minutes,
       location: this.state.location,
       mental: this.state.mental,
       environmental: this.state.environmental

@@ -5,12 +5,16 @@ import { connect } from 'react-redux';
 import UpdateMoment from './updateMoment';
 // import { deleteMoment } from '../actions/moments'
 
-class Moment extends React.Component {
+export class Moment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showFields: false
     };
+  }
+
+  componentDidMount() {
+    console.log('<Moment /> this.props', this.props);
   }
 
   updateMomentDetails(toggle) {
