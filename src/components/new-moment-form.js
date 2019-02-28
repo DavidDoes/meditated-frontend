@@ -72,7 +72,7 @@ export class NewMoment extends React.Component {
                 placeholder="Bedroom"
                 value={this.state.location}
                 onChange={e => this.handleInput(e, 'location')}
-                maxLeng="25"
+                maxLength="25"
               />
             </div>
 
