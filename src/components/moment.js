@@ -30,8 +30,6 @@ export class Moment extends React.Component {
   }
 
   deleteMoment() {
-    console.log('deleteMoment() in moment.js run');
-    console.log('this.props:', this.props);
     this.props.dispatch(deleteMoment(this.props.authToken, this.props.id));
   }
 

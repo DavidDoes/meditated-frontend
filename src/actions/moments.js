@@ -88,10 +88,9 @@ export const deleteMomentSuccess = data => ({
   values: data
 });
 
-export const deleteMoment = (authToken, deleteMoment) => dispatch => {
-  console.log('deleteMoment action run');
-  fetch(`${API_BASE_URL}/moments/${deleteMoment.id}`, {
-    body: JSON.stringify(deleteMoment),
+export const deleteMoment = (authToken, deleteMomentId) => dispatch => {
+  fetch(`${API_BASE_URL}/moments/${deleteMomentId}`, {
+    body: JSON.stringify(deleteMomentId),
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -99,7 +98,6 @@ export const deleteMoment = (authToken, deleteMoment) => dispatch => {
     }
   })
     .then(res => {
-      console.log('res from deleteMoment action:', res.body, res.statusText);
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
