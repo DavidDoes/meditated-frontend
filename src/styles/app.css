@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
   line-height: 1.5;
   font-family: 'Nunito Sans', sans-serif;
 }
@@ -45,12 +46,10 @@ input:focus {
 
 main {
   padding-top: 100px;
-  /* padding-bottom: 50px; */
   background-image: url('../img/background.jpg');
-  background-size: 1600px;
-  /* background-size: cover; */
-  background-repeat: no-repeat;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .page-title {
@@ -61,6 +60,7 @@ main {
 button {
   background-color: #9784b5;
   color: #ededed;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 @media only screen and (min-width: 768px) {

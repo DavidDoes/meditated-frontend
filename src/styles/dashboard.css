@@ -3,6 +3,7 @@
   height: 100vh;
   min-height: 600px;
   padding: 20px 10px;
+  overflow-y: scroll;
 }
 
 .container p {
