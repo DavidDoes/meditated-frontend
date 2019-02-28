@@ -28,7 +28,6 @@ export class UpdateMoment extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('this works', this);
     this.props.dispatch(updateMoment(this.props.authToken, this.state));
     this.props.refreshMoments();
     this.props.toggleShowFields();

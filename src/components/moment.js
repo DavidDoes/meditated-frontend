@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // import '../styles/moment.css';
 import UpdateMoment from './updateMoment';
-// import { deleteMoment } from '../actions/moments'
+import { deleteMoment } from '../actions/moments';
 
 export class Moment extends React.Component {
   constructor(props) {
@@ -13,9 +13,9 @@ export class Moment extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log('<Moment /> this.props', this.props);
-  }
+  // componentDidMount() {
+  //   console.log('<Moment /> this.props', this.props);
+  // }
 
   updateMomentDetails(toggle) {
     this.setState({
@@ -29,9 +29,11 @@ export class Moment extends React.Component {
     });
   }
 
-  // deleteMoment(){
-  //   this.props.dispatch(deleteMoment(this.props.authToken, this.props.id))
-  // }
+  deleteMoment() {
+    console.log('deleteMoment() in moment.js run');
+    console.log('this.props:', this.props);
+    this.props.dispatch(deleteMoment(this.props.authToken, this.props.id));
+  }
 
   render() {
     if (!this.state.showFields) {

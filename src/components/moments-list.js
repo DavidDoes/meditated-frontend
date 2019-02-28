@@ -17,7 +17,6 @@ class Moments extends React.Component {
 
   refreshMoments() {
     this.props.dispatch(getMoments(this.props.authToken));
-    console.log('<Moments /> this.props:', this.props);
   }
 
   render() {
