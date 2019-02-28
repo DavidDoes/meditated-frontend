@@ -35,6 +35,8 @@ input:focus {
 
 .app {
   height: 100%;
+  font-family: 'Nunito Sans', sans-serif;
+  /* font-family: 'Ubuntu Mono', serif; */
 }
 
 #about {
