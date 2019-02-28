@@ -22,9 +22,10 @@ class Dashboard extends React.Component {
               <span className="divTableCell">Date</span>
               <span className="divTableCell">Time</span>
               <span className="divTableCell">Duration</span>
-              <span className="divTableCell">Location</span>
+              <span className="divTableCell location">Location</span>
               <span className="divTableCell">Mental Distractions</span>
               <span className="divTableCell">Env. Distractions</span>
+              <span className="divTableCell edit-column" />
             </div>
             <Moments />
           </div>

@@ -1,0 +1,18 @@
+.divTableCell {
+  /* background: rgba(0, 0, 0, 0.2); */
+
+  min-width: 100px;
+  max-width: 100px;
+  display: table-cell;
+  padding: 5px;
+  text-align: center;
+}
+
+.location {
+  min-width: 150px;
+}
+
+.edit-column {
+  min-width: 110px;
+  max-width: 110px;
+}

@@ -17,17 +17,15 @@
 }
 
 #divTableHeader {
-  font-weight: 600;
+  font-size: 18px;
+  height: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  text-align: center;
 }
 
 .divTableRow {
   display: table-row;
-}
-
-.divTableCell {
-  display: table-cell;
-  padding: 0.25em 0.5em;
-  text-align: center;
 }
 
 @media only screen and (min-width: 480px) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-// import '../styles/moment.css';
+import '../styles/moment.css';
 import UpdateMoment from './updateMoment';
 import { deleteMoment } from '../actions/moments';
 
@@ -40,10 +40,10 @@ export class Moment extends React.Component {
           <span className="divTableCell">{this.props.date}</span>
           <span className="divTableCell">{this.props.time}</span>
           <span className="divTableCell">{this.props.minutes}</span>
-          <span className="divTableCell">{this.props.location}</span>
+          <span className="divTableCell location">{this.props.location}</span>
           <span className="divTableCell">{this.props.mental}</span>
           <span className="divTableCell">{this.props.environmental}</span>
-          <span className="divTableCell">
+          <span className="divTableCell edit-column">
             <button onClick={() => this.toggleShowFields(true)}>Edit</button>
             <button
               onClick={e => {
