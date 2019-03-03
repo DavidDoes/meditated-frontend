@@ -146,7 +146,7 @@ export class NewMoment extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  moments: state.moments,
+  moments: state.moments.moments,
   authToken: state.auth.authToken
 });
 
