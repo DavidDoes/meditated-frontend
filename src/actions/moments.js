@@ -98,13 +98,5 @@ export const deleteMoment = (authToken, deleteMomentId) => dispatch => {
     }
   })
     .then(() => dispatch(deleteMomentSuccess(deleteMomentId)))
-    // .then(res => {
-    //   if (!res.ok) {
-    //     return Promise.reject(res.statusText);
-    //   } else {
-    //     fetch(`${API_BASE_URL}/moments`);
-    //     return res.json();
-    //   }
-    // })
     .catch(err => console.error(err));
 };
