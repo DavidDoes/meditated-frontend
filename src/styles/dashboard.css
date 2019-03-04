@@ -10,6 +10,9 @@
 }
 
 #divTable {
+  background: rgba(62, 64, 103, 0.8);
+  color: #e8cee9;
+
   display: table;
   margin: auto;
 }

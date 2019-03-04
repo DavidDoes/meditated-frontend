@@ -100,10 +100,10 @@ export class NewMoment extends React.Component {
             </p>
             <fieldset>
               <div className="option">
-                <label htmlFor="mental-distractions-radio">{this.state.mental}</label>
+                <label htmlFor="mental-distractions-slider">{this.state.mental}</label>
                 <input
-                  className="mental-distractions-radio"
-                  name="mental-distractions-radio"
+                  className="mental-distractions-slider"
+                  name="mental-distractions-slider"
                   id="typeinp"
                   type="range"
                   min="0"
@@ -123,7 +123,9 @@ export class NewMoment extends React.Component {
             </p>
             <fieldset>
               <div className="option">
-                <label htmlFor="environmental distractions-radio">{this.state.environmental}</label>
+                <label htmlFor="environmental distractions-slider">
+                  {this.state.environmental}
+                </label>
                 <input
                   id="typeinp"
                   type="range"
