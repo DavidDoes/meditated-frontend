@@ -1,8 +1,6 @@
 .container {
   width: 100%;
-  /* height: fit-content; */
   min-height: 600px;
-  /* padding: 0 2em; */
 }
 
 .container p {
