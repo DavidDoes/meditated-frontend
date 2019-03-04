@@ -1,18 +1,32 @@
 .divTableCell {
-  background: rgba(237, 213, 236, 0.2);
-
-  min-width: 100px;
-  max-width: 100px;
+  /* background: rgba(62, 64, 103, 0.9); */
+  font-size: 12px;
   display: table-cell;
-  padding: 0 5px;
   text-align: center;
+
+  min-width: 65px;
+  max-width: 65px;
+  padding: 0 1px;
 }
 
 .location {
-  min-width: 150px;
+  min-width: 100px;
 }
 
-.edit-column {
-  min-width: 110px;
-  max-width: 110px;
+@media only screen and (min-width: 768px) {
+  .divTableCell {
+    font-size: 16px;
+    min-width: 100px;
+    max-width: 100px;
+    padding: 0 5px;
+  }
+
+  .edit-column {
+    min-width: 110px;
+    max-width: 110px;
+  }
+
+  .location {
+    min-width: 150px;
+  }
 }
