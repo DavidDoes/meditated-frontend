@@ -19,7 +19,8 @@
 
 #divTableHeader {
   font-size: 18px;
-  height: 100px;
+
+  height: 60px;
   min-width: 100px;
   max-width: 100px;
   text-align: center;
@@ -32,5 +33,11 @@
 @media only screen and (min-width: 480px) {
   #moments-list {
     font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #divTableHeader {
+    height: 100px;
   }
 }
