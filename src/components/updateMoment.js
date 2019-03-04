@@ -41,11 +41,11 @@ export class UpdateMoment extends React.Component {
 
     return (
       <div className="moment">
-        <form className={styles.updateForm} onSubmit={this.handleSubmit}>
+        <form className="updateForm" onSubmit={this.handleSubmit}>
           {requiredInput}
-          <div className="divTableRow">
+          <div className="divTableRow editing">
             <input
-              className=""
+              className="divTableCell"
               name="date"
               type="date"
               ref={input => (this.textInput = input)}
@@ -54,7 +54,7 @@ export class UpdateMoment extends React.Component {
               onChange={e => this.handleInput(e, 'date')}
             />
             <input
-              className=""
+              className="divTableCell editing"
               name="time"
               type="time"
               ref={input => (this.textInput = input)}
@@ -63,7 +63,7 @@ export class UpdateMoment extends React.Component {
               onChange={e => this.handleInput(e, 'time')}
             />
             <input
-              className=""
+              className="divTableCell editing"
               name="minutes"
               type="number"
               maxLength="3"
@@ -73,7 +73,7 @@ export class UpdateMoment extends React.Component {
               onChange={e => this.handleInput(e, 'minutes')}
             />
             <input
-              className=""
+              className="divTableCell editing"
               name="location"
               type="text"
               maxLength="25"

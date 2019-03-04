@@ -1,2 +1,10 @@
 .updateForm {
 }
+
+input.divTableRow.editing {
+  max-width: 50px;
+}
+
+.editing {
+  font-size: 12px;
+}
