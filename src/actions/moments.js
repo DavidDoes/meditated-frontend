@@ -83,9 +83,9 @@ export const updateMoment = (authToken, updateMoment) => dispatch => {
 // ===== DELETE MOMENT =====
 
 export const DELETE_MOMENT_SUCCESS = 'DELETE_MOMENT_SUCCESS';
-export const deleteMomentSuccess = data => ({
+export const deleteMomentSuccess = id => ({
   type: DELETE_MOMENT_SUCCESS,
-  values: data
+  id
 });
 
 export const deleteMoment = (authToken, deleteMomentId) => dispatch => {
