@@ -12,6 +12,10 @@
   min-width: 100px;
 }
 
+.divTableCell > button {
+  margin: 2px;
+}
+
 @media only screen and (min-width: 768px) {
   .divTableCell {
     font-size: 16px;

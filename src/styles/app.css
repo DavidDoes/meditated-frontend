@@ -46,6 +46,22 @@ button {
   background-color: #9784b5;
   color: #ededed;
   font-family: 'Nunito Sans', sans-serif;
+
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.log-btn {
+  height: 32px;
+  padding: 5px 8px;
+  font-size: 13px;
+  min-width: 132px;
+  width: auto;
+}
+
+.log-btn > a {
+  color: #ededed;
 }
 
 @media only screen and (min-width: 768px) {

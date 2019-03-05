@@ -13,16 +13,30 @@ export class HeaderBar extends React.Component {
     clearAuthToken();
   }
 
+  logIn() {
+    return <Link to="/login">Login</Link>;
+  }
+
   render() {
     // Only render logout if we are logged in,
     // else render login
     let logInOrOut;
     if (this.props.loggedIn) {
-      logInOrOut = <button onClick={() => this.logOut()}>Log out</button>;
+      logInOrOut = (
+        <li>
+          <button className="log-btn" onClick={() => this.logOut()}>
+            Logout
+          </button>
+        </li>
+      );
     } else {
       logInOrOut = (
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login">
+            <button type="button" className="log-btn">
+              Login
+            </button>
+          </Link>
         </li>
       );
     }
