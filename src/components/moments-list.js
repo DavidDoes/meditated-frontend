@@ -7,6 +7,7 @@ import { getMoments } from '../actions/moments';
 import Moment from './moment';
 
 import '../styles/dashboard.css';
+import moment from './moment';
 
 class Moments extends React.Component {
   componentDidMount() {
@@ -20,8 +21,11 @@ class Moments extends React.Component {
   }
 
   render() {
-    let moments = this.props.moments.map(moment => {
-      return (
+    // sort moments by date, newest first
+    let momentsArr = []
+      .concat(this.props.moments)
+      .sort((a, b) => a.date < b.date)
+      .map(moment => (
         <Moment
           key={moment.id}
           id={moment.id}
@@ -33,9 +37,8 @@ class Moments extends React.Component {
           environmental={moment.environmental}
           refreshMoments={this.refreshMoments.bind(this)}
         />
-      );
-    });
-    return <div>{moments}</div>;
+      ));
+    return <div>{momentsArr}</div>;
   }
 }
 
