@@ -1,13 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import store from '../store';
-
 import { getMoments } from '../actions/moments';
-// import moment, { Moment } from './moment';
 import Moment from './moment';
 
 import '../styles/dashboard.css';
-import moment from './moment';
 
 class Moments extends React.Component {
   componentDidMount() {
@@ -22,7 +18,7 @@ class Moments extends React.Component {
 
   render() {
     // sort moments by date, newest first
-    let momentsArr = []
+    let moments = []
       .concat(this.props.moments)
       .sort((a, b) => a.date < b.date)
       .map(moment => (
@@ -38,7 +34,7 @@ class Moments extends React.Component {
           refreshMoments={this.refreshMoments.bind(this)}
         />
       ));
-    return <div>{momentsArr}</div>;
+    return <div>{moments}</div>;
   }
 }
 
