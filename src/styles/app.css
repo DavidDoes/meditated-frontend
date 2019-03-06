@@ -30,6 +30,8 @@ input:focus {
 
 #about {
   font-size: 26px;
+  color: #e8cee9;
+  background: rgba(62, 64, 103, 0.8);
 }
 
 main {
