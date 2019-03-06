@@ -44,6 +44,9 @@ export function LandingPage(props) {
 
           <RegisterButton />
         </div>
+        <sub>
+          Logo by <a href="https://www.flaticon.com/authors/eleonor-wang">Eleanor Wang</a>
+        </sub>
       </section>
     </div>
   );
