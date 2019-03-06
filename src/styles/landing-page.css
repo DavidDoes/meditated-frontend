@@ -17,11 +17,8 @@
 .fa-angle-down,
 .fa-angle-up {
   cursor: pointer;
-  color: #9784b5;
+  color: #bbb6db;
   font-size: 4em;
-}
-
-.fa-angle-up {
 }
 
 #about {
@@ -54,8 +51,8 @@ sub {
   padding-bottom: 0.5em;
 }
 
-a,
-a:visited {
+sub > a,
+sub > a:visited {
   text-decoration: none;
   color: #e8cee9;
 }
