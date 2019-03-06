@@ -80,6 +80,7 @@ export class NewMoment extends React.Component {
               <label htmlFor="date">Date & Time</label>
               <input
                 type="date"
+                min="2018-01-01"
                 name="date"
                 value={this.state.date}
                 onChange={e => this.handleInput(e, 'date')}
@@ -138,9 +139,9 @@ export class NewMoment extends React.Component {
               </div>
             </fieldset>
           </div>
-          {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
           <button type="reset">Reset</button>
           <button type="submit">Submit</button>
+          {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
         </form>
       </section>
     );
