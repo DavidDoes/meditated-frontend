@@ -5,11 +5,14 @@ import { Provider } from 'react-redux';
 import App from './components/app';
 import store from './store';
 import './index.css';
+import ScrollToTop from 'react-router-scroll-top';
 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </Router>
   </Provider>,
   document.getElementById('root')
