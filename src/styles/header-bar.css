@@ -63,8 +63,11 @@
 }
 
 @media only screen and (min-width: 480px) {
-  .navbar {
+  .navbar-navigation {
     font-size: 20px;
+  }
+
+  .navbar {
     letter-spacing: 0.2em;
   }
 
