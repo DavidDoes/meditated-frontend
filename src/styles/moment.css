@@ -8,6 +8,10 @@
   padding: 0 1px;
 }
 
+.divTableCell button {
+  width: 100%;
+}
+
 .location {
   min-width: 100px;
 }
