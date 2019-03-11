@@ -1,26 +1,4 @@
-#tagline {
-  display: flex;
-  width: 100%;
-  min-height: 70vh;
-  max-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-  /* justify-content: center; */
-  padding-bottom: 25%;
-}
-
-#tagline > h1,
-#tagline > p {
-  flex: 1 0 5%;
-}
-
-.fa-angle-down,
-.fa-angle-up {
-  cursor: pointer;
-  color: #bbb6db;
-  font-size: 4em;
-}
-
+#tagline,
 #about {
   display: flex;
   width: 100%;
@@ -30,15 +8,27 @@
   flex-direction: column;
 }
 
-#about div {
-  display: flex;
-  height: 70vh;
-  max-width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 1em;
+#tagline {
+  padding-bottom: 10%;
+}
+
+#about {
+  padding-top: 25%;
+}
+
+#tagline > h1,
+#tagline > p,
+#about > h1,
+#about > p {
+  flex: 1 0 5%;
+}
+
+.fa-angle-down,
+.fa-angle-up {
+  flex: auto;
+  cursor: pointer;
+  color: #bbb6db;
+  font-size: 64px;
 }
 
 #signup {
@@ -46,13 +36,14 @@
   color: #4e3d6a;
 }
 
-sub {
+footer {
+  padding-top: 10%;
   font-size: 0.5em;
   padding-bottom: 0.5em;
 }
 
-sub > a,
-sub > a:visited {
+footer > a,
+footer > a:visited {
   text-decoration: none;
   color: #e8cee9;
 }

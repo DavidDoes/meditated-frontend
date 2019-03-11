@@ -13,7 +13,7 @@ export function LandingPage(props) {
   }
 
   const scrollDown = () => {
-    document.getElementById('about').scrollIntoView({
+    document.getElementById('attribution').scrollIntoView({
       behavior: 'smooth'
     });
   };
@@ -34,16 +34,13 @@ export function LandingPage(props) {
 
       <section id="about">
         <i onClick={scrollUp} className="fas fa-angle-up" />
+        <p>The secret to a strong healthy habit is consistency.</p>
+        <p>Use Meditated to keep track of your meditation habit.</p>
 
-        <div>
-          <p>The secret to a strong healthy habit is consistency.</p>
-          <p>Use Meditated to keep track of your meditation habit.</p>
-
-          <RegisterButton />
-        </div>
-        <sub>
+        <RegisterButton />
+        <footer id="attribution">
           Logo by <a href="https://www.flaticon.com/authors/eleonor-wang">Eleanor Wang</a>
-        </sub>
+        </footer>
       </section>
     </div>
   );
