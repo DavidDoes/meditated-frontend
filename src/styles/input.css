@@ -1,0 +1,20 @@
+p.form-error {
+  font-size: 12px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100%;
+  color: rgb(174, 72, 111);
+}
+
+.form-warning {
+  font-size: 12px;
+}
+
+.form-input {
+  min-width: 100%;
+}
+
+input {
+  min-width: 100%;
+  padding: 0;
+}

@@ -139,8 +139,10 @@ export class NewMoment extends React.Component {
               </div>
             </fieldset>
           </div>
+          <button className="log-btn" type="submit">
+            Submit
+          </button>
           <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
           {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
         </form>
       </section>

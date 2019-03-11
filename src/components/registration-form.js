@@ -46,7 +46,7 @@ export class RegistrationForm extends React.Component {
         </label>
         <Field
           component={Input}
-          type="text"
+          type="password"
           name="passwordConfirm"
           validate={[required, nonEmpty, matchesPassword]}
         />

@@ -20,11 +20,12 @@
 
 .form-container p {
   font-size: 18px !important;
+  margin-bottom: 0;
 }
 
 label {
-  font-size: 18px !important;
-  padding-right: 1em;
+  font-size: 18px;
+  text-align: center;
 }
 
 input {
@@ -33,7 +34,11 @@ input {
 
 .option {
   float: left;
-  margin: auto 1.25em;
+  /* margin: auto 1.25em; */
+}
+
+fieldset {
+  padding: 0;
 }
 
 button {
