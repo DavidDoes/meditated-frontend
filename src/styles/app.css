@@ -38,6 +38,19 @@ main {
   margin-bottom: 2em;
 }
 
+label {
+  font-size: 18px;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+}
+
+fieldset {
+  padding: 0;
+}
+
 button {
   background-color: #9784b5;
   color: #ededed;
@@ -46,6 +59,9 @@ button {
   border-radius: 2px;
   padding: 5px;
   cursor: pointer;
+
+  display: inline-block;
+  margin: 5px auto;
 }
 
 .log-btn {

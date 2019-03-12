@@ -20,10 +20,11 @@ export default class Input extends React.Component {
     }
 
     return (
-      <div className="form-input">
+      <div>
         {warning}
         {error}
         <input
+          className="form-input"
           {...this.props.input}
           id={this.props.input.name}
           type={this.props.type}

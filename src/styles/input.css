@@ -12,9 +12,5 @@ p.form-error {
 
 .form-input {
   min-width: 100%;
-}
-
-input {
-  min-width: 100%;
   padding: 0;
 }
