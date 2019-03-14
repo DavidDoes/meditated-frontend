@@ -4,7 +4,7 @@
 
 **Meditated** is an app that allows the user to record their meditation sessions or mindful moments, and then review them in their dashboard. This provides data for the user to review in order to determine the best parameters for optimal mindfulness.
 
-[Live App](http://meditated-client.herokuapp.com/)
+[Live App](https://meditated-client.herokuapp.com/)
 
 **Demo Username:** demouser
 
