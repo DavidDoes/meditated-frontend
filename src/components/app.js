@@ -60,11 +60,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-// const mapStateToProps = state => ({
-//   hasAuthToken: state.auth.authToken !== null,
-//   loggedIn: state.auth.currentUser !== null
-// });
-
-// Deal with update blocking - https://reacttraining.com/react-router/web/guides/dealing-with-update-blocking
-// export default withRouter(connect(mapStateToProps)(App));

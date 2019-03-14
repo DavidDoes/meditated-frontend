@@ -13,10 +13,6 @@ export class Moment extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   console.log('<Moment /> this.props', this.props);
-  // }
-
   updateMomentDetails(toggle) {
     this.setState({
       showFields: toggle
