@@ -30,7 +30,7 @@
 ## Screenshots
 
 ![screenshot of splash screen](screenshots/splash.png)
-![screenshot of new mindful moment form](screnshoots/moment.png)
+![screenshot of moment form](screenshoots/moment.png)
 ![screenshot of user dashboard](screenshots/dashboard.png)
 
 ## Future Implementations
