@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import NewMomentForm from './new-moment-form';
-import '../styles/new-moment-page.css';
 
 export function NewMomentPage(props) {
   return (
