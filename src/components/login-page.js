@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
 import LoginForm from './login-form';
+import '../styles/login-page.css';
 
 export function LoginPage(props) {
   // If we are logged in (which happens automatically when registration
