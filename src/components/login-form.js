@@ -29,6 +29,7 @@ export class LoginForm extends React.Component {
       >
         {error}
         <label htmlFor="username">Username</label>
+        <span class="demouser">Demo Username: demouser</span>
         <Field
           component={Input}
           type="text"
@@ -37,6 +38,7 @@ export class LoginForm extends React.Component {
           validate={[required, nonEmpty]}
         />
         <label htmlFor="password">Password</label>
+        <span class="demouser">Demo Password: password10</span>
         <Field
           component={Input}
           type="password"
