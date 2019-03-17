@@ -9,14 +9,6 @@
   height: 100vh;
 }
 
-.form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-bottom: 30px;
-}
-
 .demouser {
   font-size: 12px;
 }
