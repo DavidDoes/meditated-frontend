@@ -105,7 +105,6 @@ export class NewMoment extends React.Component {
                 <input
                   className="mental-distractions-slider"
                   name="mental-distractions-slider"
-                  id="typeinp"
                   type="range"
                   min="0"
                   max="4"
@@ -128,7 +127,6 @@ export class NewMoment extends React.Component {
                   {this.state.environmental}
                 </label>
                 <input
-                  id="typeinp"
                   type="range"
                   min="0"
                   max="4"
