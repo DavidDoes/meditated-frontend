@@ -95,14 +95,15 @@ export class NewMoment extends React.Component {
           </div>
 
           <div className="form-container">
-            <p>
+            <label for>
               How much of an impact did <u>mental</u> distractions have on your ability to be
               present?
-            </p>
+            </label>
             <fieldset>
               <div className="option">
                 <label htmlFor="mental-distractions-slider">{this.state.mental}</label>
                 <input
+                  id="mental-distractions-slider"
                   className="mental-distractions-slider"
                   name="mental-distractions-slider"
                   type="range"
@@ -117,16 +118,17 @@ export class NewMoment extends React.Component {
           </div>
 
           <div className="form-container">
-            <p>
+            <label>
               How much of an impact did <u>environmental</u> distractions have on your ability to be
               present?
-            </p>
+            </label>
             <fieldset>
               <div className="option">
-                <label htmlFor="environmental distractions-slider">
+                <label htmlFor="environmental-distractions-slider">
                   {this.state.environmental}
                 </label>
                 <input
+                  id="environmental-distractions-slider"
                   type="range"
                   min="0"
                   max="4"
