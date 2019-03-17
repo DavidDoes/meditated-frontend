@@ -95,10 +95,10 @@ export class NewMoment extends React.Component {
           </div>
 
           <div className="form-container">
-            <label for>
+            <p>
               How much of an impact did <u>mental</u> distractions have on your ability to be
               present?
-            </label>
+            </p>
             <fieldset>
               <div className="option">
                 <label htmlFor="mental-distractions-slider">{this.state.mental}</label>
@@ -118,10 +118,10 @@ export class NewMoment extends React.Component {
           </div>
 
           <div className="form-container">
-            <label>
+            <p>
               How much of an impact did <u>environmental</u> distractions have on your ability to be
               present?
-            </label>
+            </p>
             <fieldset>
               <div className="option">
                 <label htmlFor="environmental-distractions-slider">
