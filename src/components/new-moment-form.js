@@ -4,11 +4,13 @@ import '../styles/new-moment-form.css';
 import SuccessAlert from './success-alert.js';
 import { newMoment } from '../actions/moments';
 
+import DatePicker from 'react-date-picker';
+
 export class NewMoment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
+      date: new Date(),
       time: '',
       minutes: '',
       location: '',
@@ -25,12 +27,14 @@ export class NewMoment extends React.Component {
     });
   }
 
+  handleDate = date => this.setState({ date });
+
   handleSubmit(event) {
     event.preventDefault();
     this.setState({ alert_message: 'success' });
 
     const momentObj = {
-      date: this.state.date,
+      date: this.state.date.toLocaleDateString(),
       time: this.state.time,
       minutes: this.state.minutes,
       location: this.state.location,
@@ -78,13 +82,15 @@ export class NewMoment extends React.Component {
 
             <div className="date">
               <label htmlFor="date">Date & Time</label>
-              <input
-                type="date"
+              <DatePicker onChange={this.handleDate} value={this.state.date} />
+              {/* <input
+                type="number"
                 min="2018-01-01"
+                placeholder="2018-01-01"
                 name="date"
                 value={this.state.date}
                 onChange={e => this.handleInput(e, 'date')}
-              />
+              /> */}
               <input
                 type="time"
                 name="time"
