@@ -20,7 +20,7 @@
   margin: 2px;
 }
 
-/* date picker */
+/* date picker style overrides */
 .react-date-picker {
   display: block !important;
   width: 150px !important;
@@ -60,6 +60,16 @@
 
 .react-calendar__month-view__days__day--weekend {
   color: #4e3d6a !important;
+}
+
+.react-calendar__tile--active {
+  background-color: #4e3d6a !important;
+  color: #f3eaff !important;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background-color: #91658d !important;
 }
 
 @media only screen and (min-width: 768px) {
