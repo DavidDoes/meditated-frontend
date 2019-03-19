@@ -59,6 +59,7 @@ export class NewMoment extends React.Component {
             <div className="minutes">
               <label htmlFor="minutes">Minutes Meditated</label>
               <input
+                className="form-input"
                 type="number"
                 name="minutes"
                 placeholder="10"
@@ -71,6 +72,7 @@ export class NewMoment extends React.Component {
             <div className="location">
               <label htmlFor="location">Location</label>
               <input
+                className="form-input"
                 type="text"
                 name="location"
                 placeholder="Bedroom"
@@ -92,6 +94,7 @@ export class NewMoment extends React.Component {
                 onChange={e => this.handleInput(e, 'date')}
               /> */}
               <input
+                className="form-input"
                 type="time"
                 name="time"
                 value={this.state.time}
@@ -110,7 +113,7 @@ export class NewMoment extends React.Component {
                 <label htmlFor="mental-distractions-slider">{this.state.mental}</label>
                 <input
                   id="mental-distractions-slider"
-                  className="mental-distractions-slider"
+                  className="form-input"
                   name="mental-distractions-slider"
                   type="range"
                   min="0"
@@ -134,6 +137,7 @@ export class NewMoment extends React.Component {
                   {this.state.environmental}
                 </label>
                 <input
+                  className="form-input"
                   id="environmental-distractions-slider"
                   type="range"
                   min="0"

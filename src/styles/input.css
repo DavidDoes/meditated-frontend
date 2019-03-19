@@ -11,6 +11,12 @@ p.form-error {
 }
 
 .form-input {
+  display: flex;
+
   min-width: 100%;
   padding: 0;
+}
+
+.form-input span {
+  margin: 0 auto;
 }
