@@ -47,7 +47,7 @@
   position: relative;
 }
 
-.time-options label,
+.time-options span,
 .time-options input {
   display: block;
   position: absolute;
@@ -80,7 +80,7 @@
   float: left;
 }
 
-div.option label {
+div.option span {
   text-align: right;
   clear: both;
   float: left;
