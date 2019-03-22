@@ -29,6 +29,53 @@
   width: 150px !important;
 }
 
+/* .option-btn {
+  background-color: white;
+} */
+
+.time-options {
+  list-style-type: none;
+  margin: 25px 0 0 0;
+  padding: 0;
+}
+
+.time-options li {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 50px;
+  height: 40px;
+  position: relative;
+}
+
+.time-options label,
+.time-options input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.time-options input[type='radio'] {
+  /* opacity: 0.011; */
+  z-index: 100;
+}
+
+.time-options input[type='radio']:checked + span {
+  background-color: red;
+  border: 1px solid red;
+  color: red;
+}
+
+/* .selected {
+  background-color: red;
+} */
+
+/* .unselected {
+  background-color: coral;
+} */
+
 .option {
   float: left;
 }

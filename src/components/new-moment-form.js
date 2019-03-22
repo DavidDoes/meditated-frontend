@@ -17,8 +17,11 @@ export class NewMoment extends React.Component {
       mental: '',
       environmental: '',
       alert_message: ''
+      // time: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
   }
 
   handleInput(event, key) {
@@ -26,6 +29,43 @@ export class NewMoment extends React.Component {
       [key]: event.target.value
     });
   }
+
+  // store selected time and toggle class
+  handleClick(event, key) {
+    this.setState({
+      time: event.target.value
+    });
+
+    console.log('key:', key);
+
+    const target = event.target.id;
+    console.log('target:', target);
+
+    if (this.state.time === event.target.value) {
+      return (event.target.check = true);
+    }
+
+    // check if state key matches name prop
+    // if (target === key) {
+    //   this.setState({ [key]: 'selected' });
+    // } else {
+    //   this.setState({ [key]: 'unselected' });
+    // }
+    // how to set other keys to 'unselected'?
+
+    // this.state.class === 'unselected'
+    //   ? this.setState({ class: 'selected' })
+    //   : this.setState({ class: 'unselected' });
+  }
+
+  // handleChange(event) {
+  //   const value = event.target.type === 'radio' ? event.target.checked : event.target.value;
+  //   const name = event.target.name;
+
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // }
 
   handleDate = date => this.setState({ date });
 
@@ -93,12 +133,60 @@ export class NewMoment extends React.Component {
                 value={this.state.date}
                 onChange={e => this.handleInput(e, 'date')}
               /> */}
+              <ul className="time-options">
+                <li>
+                  <label>
+                    <input
+                      className={this.state.class}
+                      type="radio"
+                      name="time"
+                      id="earlymorning"
+                      value="Early Morning"
+                      onClick={e => this.handleClick(e, 'earlymorning')}
+                    />
+                    <span htlmFor="earlymorning">Early Morning</span>
+                  </label>
+                </li>
+                <li>
+                  <label htmlFor="morning">Morning</label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="time"
+                    id="morning"
+                    value="Morning"
+                    onClick={e => this.handleClick(e, 'morning')}
+                  />
+                </li>
+              </ul>
+
               <input
-                className="form-input"
-                type="time"
+                className={this.state.class}
+                type="button"
                 name="time"
-                value={this.state.time}
-                onChange={e => this.handleInput(e, 'time')}
+                value="Late Morning"
+                onClick={this.handleClick}
+              />
+              <input
+                className={this.state.class}
+                type="button"
+                name="time"
+                value="Afternoon"
+                onClick={this.handleClick}
+              />
+              <input
+                className={this.state.class}
+                type="button"
+                name="time"
+                value="Evening"
+                onClick={this.handleClick}
+              />
+              <input
+                className={this.state.class}
+                type="button"
+                name="time"
+                value="Bedtime"
+                onClick={e => this.handleClick(e, 'time')}
               />
             </div>
           </div>
