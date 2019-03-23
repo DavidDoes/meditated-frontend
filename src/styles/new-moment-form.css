@@ -19,7 +19,7 @@
   margin-top: 0.15em;
 }
 
-.form-container > p {
+.form-container p {
   font-size: 18px !important;
   margin-bottom: 0;
   max-width: 400px;
@@ -38,13 +38,17 @@
   width: 500px;
 }
 
-.time-options {
+.time-options,
+.mental-options,
+.environmental-options {
   text-align: center;
   list-style-type: none;
   padding-left: 0;
 }
 
-.time-options li {
+.time-options li,
+.mental-options li,
+.environmental-options li {
   /* float: left; */
   margin: 0 5px 0 0;
   width: 100%;
@@ -54,12 +58,18 @@
   max-width: 200px;
 }
 
-.time-options span {
+.time-options span,
+.mental-options span,
+.environmental-options span {
   padding-top: 10px;
 }
 
 .time-options span,
-.time-options input {
+.time-options input,
+.mental-options span,
+.mental-options input,
+.environmental-options span,
+.environmental-options input {
   font-size: 12px;
   display: block;
   position: absolute;
@@ -71,18 +81,24 @@
   color: #4e3d6a;
 }
 
-.time-options span:hover {
+.time-options span:hover,
+.mental-options span:hover,
+.environmental-options span:hover {
   cursor: pointer;
   background-color: #91658d;
   color: white;
 }
 
-.time-options input[type='radio'] {
+.time-options input[type='radio'],
+.mental-options input[type='radio'],
+.environmental-options input[type='radio'] {
   opacity: 0.011;
   z-index: 100;
 }
 
-.time-options input[type='radio']:checked + span {
+.time-options input[type='radio']:checked + span,
+.mental-options input[type='radio']:checked + span,
+.environmental-options input[type='radio']:checked + span {
   background-color: #4e3d6a;
   color: white;
 }

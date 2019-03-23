@@ -201,54 +201,126 @@ export class NewMoment extends React.Component {
                 </li>
               </ul>
             </div>
-          </div>
 
-          <div className="form-container">
-            <p>
-              How much of an impact did <u>mental</u> distractions have on your ability to be
-              present?
-            </p>
-            <fieldset>
-              <div className="option">
-                <label htmlFor="mental-distractions-slider">{this.state.mental}</label>
-                <input
-                  id="mental-distractions-slider"
-                  className="form-input"
-                  name="mental-distractions-slider"
-                  type="range"
-                  min="0"
-                  max="4"
-                  value={this.state.mental}
-                  onChange={e => this.handleInput(e, 'mental')}
-                  step="1"
-                />
-              </div>
-            </fieldset>
-          </div>
-
-          <div className="form-container">
-            <p>
-              How much of an impact did <u>environmental</u> distractions have on your ability to be
-              present?
-            </p>
-            <fieldset>
-              <div className="option">
-                <label htmlFor="environmental-distractions-slider">
-                  {this.state.environmental}
+            <ul className="mental-options">
+              <p>
+                How much of an impact did <u>mental</u> distractions have on your ability to be
+                present?
+              </p>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="mental"
+                    id="mental-none"
+                    value="None"
+                    onClick={e => this.handleClick(e, 'mental-none')}
+                  />
+                  <span htlmFor="mental-none">None</span>
                 </label>
-                <input
-                  className="form-input"
-                  id="environmental-distractions-slider"
-                  type="range"
-                  min="0"
-                  max="4"
-                  value={this.state.environmental}
-                  onChange={e => this.handleInput(e, 'environmental')}
-                  step="1"
-                />
-              </div>
-            </fieldset>
+              </li>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="mental"
+                    id="mental-a-little"
+                    value="A Little"
+                    onClick={e => this.handleClick(e, 'mental-a-little')}
+                  />
+                  <span htlmFor="mental-a-little">A Little</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="mental"
+                    id="mental-some"
+                    value="Some"
+                    onClick={e => this.handleClick(e, 'mental-some')}
+                  />
+                  <span htlmFor="mental-some">Some</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="mental"
+                    id="mental-a-lot"
+                    value="A Lot"
+                    onClick={e => this.handleClick(e, 'mental-a-lot')}
+                  />
+                  <span htlmFor="mental-a-lot">A Lot</span>
+                </label>
+              </li>
+            </ul>
+
+            <ul className="environmental-options">
+              <p>
+                How much of an impact did <u>environmental</u> distractions have on your ability to
+                be present?
+              </p>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="environmental"
+                    id="environmental-none"
+                    value="None"
+                    onClick={e => this.handleClick(e, 'mental-none')}
+                  />
+                  <span htlmFor="environmental-none">None</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="environmental"
+                    id="environmental-a-little"
+                    value="A Little"
+                    onClick={e => this.handleClick(e, 'environmental-a-little')}
+                  />
+                  <span htlmFor="environmental-a-little">A Little</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="environmental"
+                    id="environmental-some"
+                    value="Some"
+                    onClick={e => this.handleClick(e, 'environmental-some')}
+                  />
+                  <span htlmFor="environmental-some">Some</span>
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input
+                    className={this.state.class}
+                    type="radio"
+                    name="environmental"
+                    id="environmental-a-lot"
+                    value="A Lot"
+                    onClick={e => this.handleClick(e, 'environmental-a-lot')}
+                  />
+                  <span htlmFor="environmental-a-lot">A Lot</span>
+                </label>
+              </li>
+            </ul>
           </div>
+
           <button className="log-btn" type="submit">
             Submit
           </button>
