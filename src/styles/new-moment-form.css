@@ -19,9 +19,10 @@
   margin-top: 0.15em;
 }
 
-.form-container p {
+.form-container > p {
   font-size: 18px !important;
   margin-bottom: 0;
+  max-width: 400px;
 }
 
 .form-container input {
@@ -149,4 +150,10 @@ div.option span {
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
   background-color: #91658d !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .form-container {
+    min-width: 750px;
+  }
 }
