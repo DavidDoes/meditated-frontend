@@ -20,9 +20,11 @@ export class NewMoment extends React.Component {
       // time: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleTime = this.handleTime.bind(this);
     // this.handleChange = this.handleChange.bind(this);
   }
+
+  handleDate = date => this.setState({ date });
 
   handleInput(event, key) {
     this.setState({
@@ -30,44 +32,38 @@ export class NewMoment extends React.Component {
     });
   }
 
-  // store selected time and toggle class
-  handleClick(event, key) {
+  // store selected 'time'
+  handleTime(event, key) {
     this.setState({
       time: event.target.value
     });
 
-    console.log('key:', key);
-
-    const target = event.target.id;
-    console.log('target:', target);
-
     if (this.state.time === event.target.value) {
       return (event.target.check = true);
     }
-
-    // check if state key matches name prop
-    // if (target === key) {
-    //   this.setState({ [key]: 'selected' });
-    // } else {
-    //   this.setState({ [key]: 'unselected' });
-    // }
-    // how to set other keys to 'unselected'?
-
-    // this.state.class === 'unselected'
-    //   ? this.setState({ class: 'selected' })
-    //   : this.setState({ class: 'unselected' });
   }
 
-  // handleChange(event) {
-  //   const value = event.target.type === 'radio' ? event.target.checked : event.target.value;
-  //   const name = event.target.name;
+  // store selected 'mental'
+  handleMental(event, key) {
+    this.setState({
+      mental: event.target.value
+    });
 
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }
+    if (this.state.mental === event.target.value) {
+      return (event.target.check = true);
+    }
+  }
 
-  handleDate = date => this.setState({ date });
+  // store selected 'environmental'
+  handleEnv(event, key) {
+    this.setState({
+      environmental: event.target.value
+    });
+
+    if (this.state.environmental === event.target.value) {
+      return (event.target.check = true);
+    }
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -125,14 +121,7 @@ export class NewMoment extends React.Component {
             <div className="date">
               <label htmlFor="date">Date & Time</label>
               <DatePicker onChange={this.handleDate} value={this.state.date} />
-              {/* <input
-                type="number"
-                min="2018-01-01"
-                placeholder="2018-01-01"
-                name="date"
-                value={this.state.date}
-                onChange={e => this.handleInput(e, 'date')}
-              /> */}
+
               <ul className="time-options">
                 <li>
                   <label>
@@ -142,7 +131,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="earlymorning"
                       value="Early Morning"
-                      onClick={e => this.handleClick(e, 'earlymorning')}
+                      onClick={e => this.handleTime(e, 'earlymorning')}
                     />
                     <span htlmFor="earlymorning">Early Morning</span>
                   </label>
@@ -155,7 +144,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="morning"
                       value="morning"
-                      onClick={e => this.handleClick(e, 'morning')}
+                      onClick={e => this.handleTime(e, 'morning')}
                     />
                     <span htlmFor="morning">Morning</span>
                   </label>
@@ -168,7 +157,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="afternoon"
                       value="Afternoon"
-                      onClick={e => this.handleClick(e, 'afternoon')}
+                      onClick={e => this.handleTime(e, 'afternoon')}
                     />
                     <span htlmFor="afternoon">Afternoon</span>
                   </label>
@@ -181,7 +170,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="evening"
                       value="Evening"
-                      onClick={e => this.handleClick(e, 'evening')}
+                      onClick={e => this.handleTime(e, 'evening')}
                     />
                     <span htlmFor="evening">Evening</span>
                   </label>
@@ -194,7 +183,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="bedtime"
                       value="Bedtime"
-                      onClick={e => this.handleClick(e, 'bedtime')}
+                      onClick={e => this.handleTime(e, 'bedtime')}
                     />
                     <span htlmFor="bedtime">Bedtime</span>
                   </label>
@@ -215,7 +204,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-none"
                     value="None"
-                    onClick={e => this.handleClick(e, 'mental-none')}
+                    onClick={e => this.handleMental(e, 'mental-none')}
                   />
                   <span htlmFor="mental-none">None</span>
                 </label>
@@ -228,7 +217,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-a-little"
                     value="A Little"
-                    onClick={e => this.handleClick(e, 'mental-a-little')}
+                    onClick={e => this.handleMental(e, 'mental-a-little')}
                   />
                   <span htlmFor="mental-a-little">A Little</span>
                 </label>
@@ -241,7 +230,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-some"
                     value="Some"
-                    onClick={e => this.handleClick(e, 'mental-some')}
+                    onClick={e => this.handleMental(e, 'mental-some')}
                   />
                   <span htlmFor="mental-some">Some</span>
                 </label>
@@ -254,7 +243,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-a-lot"
                     value="A Lot"
-                    onClick={e => this.handleClick(e, 'mental-a-lot')}
+                    onClick={e => this.handleMental(e, 'mental-a-lot')}
                   />
                   <span htlmFor="mental-a-lot">A Lot</span>
                 </label>
@@ -274,7 +263,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-none"
                     value="None"
-                    onClick={e => this.handleClick(e, 'mental-none')}
+                    onClick={e => this.handleEnv(e, 'mental-none')}
                   />
                   <span htlmFor="environmental-none">None</span>
                 </label>
@@ -287,7 +276,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-a-little"
                     value="A Little"
-                    onClick={e => this.handleClick(e, 'environmental-a-little')}
+                    onClick={e => this.handleEnv(e, 'environmental-a-little')}
                   />
                   <span htlmFor="environmental-a-little">A Little</span>
                 </label>
@@ -300,7 +289,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-some"
                     value="Some"
-                    onClick={e => this.handleClick(e, 'environmental-some')}
+                    onClick={e => this.handleEnv(e, 'environmental-some')}
                   />
                   <span htlmFor="environmental-some">Some</span>
                 </label>
@@ -313,13 +302,18 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-a-lot"
                     value="A Lot"
-                    onClick={e => this.handleClick(e, 'environmental-a-lot')}
+                    onClick={e => this.handleEnv(e, 'environmental-a-lot')}
                   />
                   <span htlmFor="environmental-a-lot">A Lot</span>
                 </label>
               </li>
             </ul>
           </div>
+
+          {/* TO-DO:
+            - on scroll, hide form under navbar (z-index)
+            - submit data properly (state?)
+          */}
 
           <button className="log-btn" type="submit">
             Submit
