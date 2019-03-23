@@ -20,58 +20,6 @@
   margin: 2px;
 }
 
-/* date picker style overrides */
-.react-date-picker {
-  display: block !important;
-  width: 150px !important;
-  font-size: 12px;
-  background-color: white;
-}
-
-.react-date-picker__wrapper {
-  border: none !important;
-}
-
-.react-date-picker__inputGroup {
-  min-width: 150px !important;
-  width: 150px !important;
-}
-
-.react-date-picker__button {
-  display: none !important;
-}
-
-.react-date-picker__inputGroup__input {
-  color: black;
-}
-
-.react-calendar {
-  background-color: #f3eaff;
-  color: #4e3d6a;
-}
-
-.react-calendar button {
-  color: #4e3d6a;
-}
-
-.react-calendar__month-view__days__day--neighboringMonth {
-  color: #91658d;
-}
-
-.react-calendar__month-view__days__day--weekend {
-  color: #4e3d6a !important;
-}
-
-.react-calendar__tile--active {
-  background-color: #4e3d6a !important;
-  color: #f3eaff !important;
-}
-
-.react-calendar__tile--active:enabled:hover,
-.react-calendar__tile--active:enabled:focus {
-  background-color: #91658d !important;
-}
-
 @media only screen and (min-width: 768px) {
   .divTableCell {
     font-size: 16px;

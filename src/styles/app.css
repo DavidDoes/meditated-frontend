@@ -27,6 +27,11 @@ input:focus {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+p {
+  margin: 10px;
+  text-align: center;
+}
+
 main {
   padding-top: 100px;
   margin: 0 auto;
@@ -40,6 +45,7 @@ main {
 label {
   font-size: 18px;
   text-align: center;
+  display: block;
 }
 
 input {
