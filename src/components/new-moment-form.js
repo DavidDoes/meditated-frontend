@@ -148,46 +148,58 @@ export class NewMoment extends React.Component {
                   </label>
                 </li>
                 <li>
-                  <label htmlFor="morning">Morning</label>
-                  <input
-                    className={this.state.class}
-                    type="radio"
-                    name="time"
-                    id="morning"
-                    value="Morning"
-                    onClick={e => this.handleClick(e, 'morning')}
-                  />
+                  <label>
+                    <input
+                      className={this.state.class}
+                      type="radio"
+                      name="time"
+                      id="morning"
+                      value="morning"
+                      onClick={e => this.handleClick(e, 'morning')}
+                    />
+                    <span htlmFor="morning">Morning</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input
+                      className={this.state.class}
+                      type="radio"
+                      name="time"
+                      id="afternoon"
+                      value="Afternoon"
+                      onClick={e => this.handleClick(e, 'afternoon')}
+                    />
+                    <span htlmFor="afternoon">Afternoon</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input
+                      className={this.state.class}
+                      type="radio"
+                      name="time"
+                      id="evening"
+                      value="Evening"
+                      onClick={e => this.handleClick(e, 'evening')}
+                    />
+                    <span htlmFor="evening">Evening</span>
+                  </label>
+                </li>
+                <li>
+                  <label>
+                    <input
+                      className={this.state.class}
+                      type="radio"
+                      name="time"
+                      id="bedtime"
+                      value="Bedtime"
+                      onClick={e => this.handleClick(e, 'bedtime')}
+                    />
+                    <span htlmFor="bedtime">Bedtime</span>
+                  </label>
                 </li>
               </ul>
-
-              <input
-                className={this.state.class}
-                type="button"
-                name="time"
-                value="Late Morning"
-                onClick={this.handleClick}
-              />
-              <input
-                className={this.state.class}
-                type="button"
-                name="time"
-                value="Afternoon"
-                onClick={this.handleClick}
-              />
-              <input
-                className={this.state.class}
-                type="button"
-                name="time"
-                value="Evening"
-                onClick={this.handleClick}
-              />
-              <input
-                className={this.state.class}
-                type="button"
-                name="time"
-                value="Bedtime"
-                onClick={e => this.handleClick(e, 'time')}
-              />
             </div>
           </div>
 
