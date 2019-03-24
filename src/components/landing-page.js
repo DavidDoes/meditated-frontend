@@ -19,7 +19,7 @@ export function LandingPage(props) {
   };
 
   const scrollUp = () => {
-    document.getElementById('root').scrollIntoView({
+    document.getElementById('tagline').scrollIntoView({
       behavior: 'smooth'
     });
   };
