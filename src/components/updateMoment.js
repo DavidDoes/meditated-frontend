@@ -37,16 +37,7 @@ export class UpdateMoment extends React.Component {
       <div className="moment">
         <form className="updateForm" onSubmit={this.handleSubmit}>
           <div className="divTableRow">
-            <input
-              required
-              className="divTableCell editing"
-              name="date"
-              type="date"
-              ref={input => (this.textInput = input)}
-              placeholder={this.state.date}
-              value={this.state.date}
-              onChange={e => this.handleInput(e, 'date')}
-            />
+            <span className="divTableCell">{this.props.date}</span>
             <input
               required
               className="divTableCell editing"
@@ -79,8 +70,8 @@ export class UpdateMoment extends React.Component {
               value={this.state.location}
               onChange={e => this.handleInput(e, 'location')}
             />
-            <span className="divTableCell" />
-            <span className="divTableCell" />
+            <span className="divTableCell">{this.props.mental}</span>
+            <span className="divTableCell">{this.props.environmental}</span>
             <span className="divTableCell edit-column">
               <button type="submit">Save</button>
               <button
