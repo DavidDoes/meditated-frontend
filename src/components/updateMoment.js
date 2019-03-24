@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { updateMoment } from '../actions/moments';
+import Select from 'react-select';
 
 export class UpdateMoment extends React.Component {
   constructor(props) {
@@ -25,6 +26,11 @@ export class UpdateMoment extends React.Component {
     });
   }
 
+  handleTime = option => {
+    const time = option.value;
+    this.setState({ time });
+  };
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.dispatch(updateMoment(this.props.authToken, this.state));
@@ -33,20 +39,25 @@ export class UpdateMoment extends React.Component {
   }
 
   render() {
+    const options = [
+      { value: 'Early Morning', label: 'Early Morning' },
+      { value: 'Morning', label: 'Morning' },
+      { value: 'Afternoon', label: 'Afternoon' },
+      { value: 'Evening', label: 'Evening' },
+      { value: 'Bedtime', label: 'Bedtime' }
+    ];
     return (
       <div className="moment">
         <form className="updateForm" onSubmit={this.handleSubmit}>
           <div className="divTableRow">
             <span className="divTableCell">{this.props.date}</span>
-            <input
-              required
-              className="divTableCell editing"
+            <Select
+              options={options}
               name="time"
-              type="time"
-              ref={input => (this.textInput = input)}
+              // ref={input => (this.textInput = input)}
               placeholder={this.state.time}
-              value={this.state.time}
-              onChange={e => this.handleInput(e, 'time')}
+              value={this.state.value}
+              onChange={this.handleTime}
             />
             <input
               required
