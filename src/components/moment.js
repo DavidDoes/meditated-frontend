@@ -42,6 +42,7 @@ export class Moment extends React.Component {
           <span className="divTableCell edit-column">
             <button onClick={() => this.toggleShowFields(true)}>Edit</button>
             <button
+              className="secondary-btn"
               onClick={e => {
                 if (window.confirm('Are you sure you wish to delete this moment?'))
                   this.deleteMoment(e);

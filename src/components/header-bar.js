@@ -26,7 +26,7 @@ export class HeaderBar extends React.Component {
       logInOrOut = (
         <ul>
           <li>
-            <button className="log-btn" onClick={() => this.logOut()}>
+            <button className="main-btn" onClick={() => this.logOut()}>
               Logout
             </button>
           </li>
@@ -43,7 +43,7 @@ export class HeaderBar extends React.Component {
         <ul>
           <li>
             <Link to="/login">
-              <button type="button" className="log-btn">
+              <button type="button" className="main-btn">
                 Login
               </button>
             </Link>

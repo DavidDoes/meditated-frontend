@@ -69,7 +69,7 @@ button {
   margin: 5px;
 }
 
-.log-btn {
+.main-btn {
   height: 32px;
   padding: 5px 8px;
   font-size: 13px;
@@ -77,8 +77,12 @@ button {
   width: auto;
 }
 
-.log-btn > a {
+.main-btn > a {
   color: #ededed;
+}
+
+.secondary-btn {
+  background-color: #91658d;
 }
 
 .form-container {

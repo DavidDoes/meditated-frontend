@@ -18,8 +18,14 @@ export class NewMoment extends React.Component {
       environmental: '',
       redirectToDashboard: false
     };
+    this.baseState = this.state; // store base state for future
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  // reset to base state
+  resetForm = () => {
+    this.setState(this.baseState);
+  };
 
   handleDate = date => this.setState({ date });
 
@@ -322,16 +328,11 @@ export class NewMoment extends React.Component {
               </li>
             </ul>
           </div>
-
-          {/* TO-DO:
-            - on scroll, hide form under navbar (z-index)
-            - submit data properly (state?)
-          */}
           <div>
-            <button className="log-btn" type="reset">
+            <button onClick={this.resetForm} className="main-btn secondary-btn" type="reset">
               Reset
             </button>
-            <button className="log-btn" type="submit">
+            <button className="main-btn" type="submit">
               Submit
             </button>
           </div>
