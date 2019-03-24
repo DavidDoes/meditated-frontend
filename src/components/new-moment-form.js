@@ -133,7 +133,7 @@ export class NewMoment extends React.Component {
                       value="Early Morning"
                       onClick={e => this.handleTime(e, 'earlymorning')}
                     />
-                    <span htlmFor="earlymorning">Early Morning</span>
+                    <span htmlFor="earlymorning">Early Morning</span>
                   </label>
                 </li>
                 <li>
@@ -146,7 +146,7 @@ export class NewMoment extends React.Component {
                       value="morning"
                       onClick={e => this.handleTime(e, 'morning')}
                     />
-                    <span htlmFor="morning">Morning</span>
+                    <span htmlFor="morning">Morning</span>
                   </label>
                 </li>
                 <li>
@@ -159,7 +159,7 @@ export class NewMoment extends React.Component {
                       value="Afternoon"
                       onClick={e => this.handleTime(e, 'afternoon')}
                     />
-                    <span htlmFor="afternoon">Afternoon</span>
+                    <span htmlFor="afternoon">Afternoon</span>
                   </label>
                 </li>
                 <li>
@@ -172,7 +172,7 @@ export class NewMoment extends React.Component {
                       value="Evening"
                       onClick={e => this.handleTime(e, 'evening')}
                     />
-                    <span htlmFor="evening">Evening</span>
+                    <span htmlFor="evening">Evening</span>
                   </label>
                 </li>
                 <li>
@@ -185,7 +185,7 @@ export class NewMoment extends React.Component {
                       value="Bedtime"
                       onClick={e => this.handleTime(e, 'bedtime')}
                     />
-                    <span htlmFor="bedtime">Bedtime</span>
+                    <span htmlFor="bedtime">Bedtime</span>
                   </label>
                 </li>
               </ul>
@@ -206,7 +206,7 @@ export class NewMoment extends React.Component {
                     value="None"
                     onClick={e => this.handleMental(e, 'mental-none')}
                   />
-                  <span htlmFor="mental-none">None</span>
+                  <span htmlFor="mental-none">None</span>
                 </label>
               </li>
               <li>
@@ -219,7 +219,7 @@ export class NewMoment extends React.Component {
                     value="A Little"
                     onClick={e => this.handleMental(e, 'mental-a-little')}
                   />
-                  <span htlmFor="mental-a-little">A Little</span>
+                  <span htmlFor="mental-a-little">A Little</span>
                 </label>
               </li>
               <li>
@@ -232,7 +232,7 @@ export class NewMoment extends React.Component {
                     value="Some"
                     onClick={e => this.handleMental(e, 'mental-some')}
                   />
-                  <span htlmFor="mental-some">Some</span>
+                  <span htmlFor="mental-some">Some</span>
                 </label>
               </li>
               <li>
@@ -245,7 +245,7 @@ export class NewMoment extends React.Component {
                     value="A Lot"
                     onClick={e => this.handleMental(e, 'mental-a-lot')}
                   />
-                  <span htlmFor="mental-a-lot">A Lot</span>
+                  <span htmlFor="mental-a-lot">A Lot</span>
                 </label>
               </li>
             </ul>
@@ -265,7 +265,7 @@ export class NewMoment extends React.Component {
                     value="None"
                     onClick={e => this.handleEnv(e, 'mental-none')}
                   />
-                  <span htlmFor="environmental-none">None</span>
+                  <span htmlFor="environmental-none">None</span>
                 </label>
               </li>
               <li>
@@ -278,7 +278,7 @@ export class NewMoment extends React.Component {
                     value="A Little"
                     onClick={e => this.handleEnv(e, 'environmental-a-little')}
                   />
-                  <span htlmFor="environmental-a-little">A Little</span>
+                  <span htmlFor="environmental-a-little">A Little</span>
                 </label>
               </li>
               <li>
@@ -291,7 +291,7 @@ export class NewMoment extends React.Component {
                     value="Some"
                     onClick={e => this.handleEnv(e, 'environmental-some')}
                   />
-                  <span htlmFor="environmental-some">Some</span>
+                  <span htmlFor="environmental-some">Some</span>
                 </label>
               </li>
               <li>
@@ -304,7 +304,7 @@ export class NewMoment extends React.Component {
                     value="A Lot"
                     onClick={e => this.handleEnv(e, 'environmental-a-lot')}
                   />
-                  <span htlmFor="environmental-a-lot">A Lot</span>
+                  <span htmlFor="environmental-a-lot">A Lot</span>
                 </label>
               </li>
             </ul>
