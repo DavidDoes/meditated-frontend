@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { updateMoment } from '../actions/moments';
-import styles from '../styles/update-moment.css';
 
 export class UpdateMoment extends React.Component {
   constructor(props) {

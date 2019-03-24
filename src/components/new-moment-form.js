@@ -1,7 +1,7 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../styles/new-moment-form.css';
-import SuccessAlert from './success-alert.js';
 import { newMoment } from '../actions/moments';
 
 import DatePicker from 'react-date-picker';
@@ -16,18 +16,9 @@ export class NewMoment extends React.Component {
       location: '',
       mental: '',
       environmental: '',
-      alert_message: ''
+      redirectToDashboard: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleTime = this.handleTime.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors
-      });
-    }
   }
 
   handleDate = date => this.setState({ date });
@@ -73,7 +64,6 @@ export class NewMoment extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.setState({ alert_message: 'success' });
 
     const momentObj = {
       date: this.state.date.toLocaleDateString(),
@@ -83,10 +73,19 @@ export class NewMoment extends React.Component {
       mental: this.state.mental,
       environmental: this.state.environmental
     };
+
     this.props.dispatch(newMoment(this.props.authToken, momentObj));
+    this.setState({
+      redirectToDashboard: true
+    });
   }
 
   render() {
+    // redirect to dashboard on successful submit
+    if (this.state.redirectToDashboard) {
+      return <Redirect to="/dashboard" />;
+    }
+
     return (
       <section id="form-section">
         <form id="record-moment" onSubmit={this.handleSubmit} ref="form">
@@ -133,7 +132,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="earlymorning"
                       value="Early Morning"
-                      onClick={e => this.handleTime(e, 'earlymorning')}
+                      onChange={e => this.handleTime(e, 'earlymorning')}
                     />
                     <span htmlFor="earlymorning">Early Morning</span>
                   </label>
@@ -146,8 +145,8 @@ export class NewMoment extends React.Component {
                       type="radio"
                       name="time"
                       id="morning"
-                      value="morning"
-                      onClick={e => this.handleTime(e, 'morning')}
+                      value="Morning"
+                      onChange={e => this.handleTime(e, 'morning')}
                     />
                     <span htmlFor="morning">Morning</span>
                   </label>
@@ -161,7 +160,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="afternoon"
                       value="Afternoon"
-                      onClick={e => this.handleTime(e, 'afternoon')}
+                      onChange={e => this.handleTime(e, 'afternoon')}
                     />
                     <span htmlFor="afternoon">Afternoon</span>
                   </label>
@@ -175,7 +174,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="evening"
                       value="Evening"
-                      onClick={e => this.handleTime(e, 'evening')}
+                      onChange={e => this.handleTime(e, 'evening')}
                     />
                     <span htmlFor="evening">Evening</span>
                   </label>
@@ -189,7 +188,7 @@ export class NewMoment extends React.Component {
                       name="time"
                       id="bedtime"
                       value="Bedtime"
-                      onClick={e => this.handleTime(e, 'bedtime')}
+                      onChange={e => this.handleTime(e, 'bedtime')}
                     />
                     <span htmlFor="bedtime">Bedtime</span>
                   </label>
@@ -211,7 +210,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-none"
                     value="None"
-                    onClick={e => this.handleMental(e, 'mental-none')}
+                    onChange={e => this.handleMental(e, 'mental-none')}
                   />
                   <span htmlFor="mental-none">None</span>
                 </label>
@@ -225,7 +224,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-a-little"
                     value="A Little"
-                    onClick={e => this.handleMental(e, 'mental-a-little')}
+                    onChange={e => this.handleMental(e, 'mental-a-little')}
                   />
                   <span htmlFor="mental-a-little">A Little</span>
                 </label>
@@ -239,7 +238,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-some"
                     value="Some"
-                    onClick={e => this.handleMental(e, 'mental-some')}
+                    onChange={e => this.handleMental(e, 'mental-some')}
                   />
                   <span htmlFor="mental-some">Some</span>
                 </label>
@@ -253,7 +252,7 @@ export class NewMoment extends React.Component {
                     name="mental"
                     id="mental-a-lot"
                     value="A Lot"
-                    onClick={e => this.handleMental(e, 'mental-a-lot')}
+                    onChange={e => this.handleMental(e, 'mental-a-lot')}
                   />
                   <span htmlFor="mental-a-lot">A Lot</span>
                 </label>
@@ -274,7 +273,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-none"
                     value="None"
-                    onClick={e => this.handleEnv(e, 'mental-none')}
+                    onChange={e => this.handleEnv(e, 'mental-none')}
                   />
                   <span htmlFor="environmental-none">None</span>
                 </label>
@@ -288,7 +287,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-a-little"
                     value="A Little"
-                    onClick={e => this.handleEnv(e, 'environmental-a-little')}
+                    onChange={e => this.handleEnv(e, 'environmental-a-little')}
                   />
                   <span htmlFor="environmental-a-little">A Little</span>
                 </label>
@@ -302,7 +301,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-some"
                     value="Some"
-                    onClick={e => this.handleEnv(e, 'environmental-some')}
+                    onChange={e => this.handleEnv(e, 'environmental-some')}
                   />
                   <span htmlFor="environmental-some">Some</span>
                 </label>
@@ -316,7 +315,7 @@ export class NewMoment extends React.Component {
                     name="environmental"
                     id="environmental-a-lot"
                     value="A Lot"
-                    onClick={e => this.handleEnv(e, 'environmental-a-lot')}
+                    onChange={e => this.handleEnv(e, 'environmental-a-lot')}
                   />
                   <span htmlFor="environmental-a-lot">A Lot</span>
                 </label>
@@ -329,8 +328,6 @@ export class NewMoment extends React.Component {
             - submit data properly (state?)
           */}
           <div>
-            <div>{this.state.alert_message === 'success' ? <SuccessAlert /> : null}</div>
-
             <button className="log-btn" type="reset">
               Reset
             </button>
