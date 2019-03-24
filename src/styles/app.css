@@ -66,7 +66,7 @@ button {
   cursor: pointer;
 
   display: inline-block;
-  margin: 5px auto;
+  margin: 5px;
 }
 
 .log-btn {

@@ -9,6 +9,7 @@
   justify-content: center;
 
   margin: 0 auto;
+  padding-bottom: 20px;
 }
 
 #record-moment button[type='submit'] {
@@ -93,7 +94,7 @@
 .mental-options input[type='radio'],
 .environmental-options input[type='radio'] {
   opacity: 0.011;
-  z-index: 100;
+  z-index: 99;
 }
 
 .time-options input[type='radio']:checked + span,
@@ -166,6 +167,10 @@ div.option span {
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
   background-color: #91658d !important;
+}
+
+.alert-success {
+  text-align: center;
 }
 
 @media only screen and (min-width: 768px) {

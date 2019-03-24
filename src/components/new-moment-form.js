@@ -314,14 +314,16 @@ export class NewMoment extends React.Component {
             - on scroll, hide form under navbar (z-index)
             - submit data properly (state?)
           */}
+          <div>
+            <div>{this.state.alert_message === 'success' ? <SuccessAlert /> : null}</div>
 
-          <button className="log-btn" type="submit">
-            Submit
-          </button>
-          <button className="log-btn" type="reset">
-            Reset
-          </button>
-          {this.state.alert_message === 'success' ? <SuccessAlert /> : null}
+            <button className="log-btn" type="reset">
+              Reset
+            </button>
+            <button className="log-btn" type="submit">
+              Submit
+            </button>
+          </div>
         </form>
       </section>
     );
