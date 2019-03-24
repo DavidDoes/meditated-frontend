@@ -17,11 +17,17 @@ export class NewMoment extends React.Component {
       mental: '',
       environmental: '',
       alert_message: ''
-      // time: []
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTime = this.handleTime.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({
+        errors: nextProps.errors
+      });
+    }
   }
 
   handleDate = date => this.setState({ date });
@@ -81,20 +87,14 @@ export class NewMoment extends React.Component {
   }
 
   render() {
-    // set all inputs to required
-    let requiredInput;
-    if (this.state.validateDisplay) {
-      requiredInput = <div className="">Required</div>;
-    }
-
     return (
       <section id="form-section">
         <form id="record-moment" onSubmit={this.handleSubmit} ref="form">
           <div className="form-container">
-            {requiredInput}
             <div className="minutes">
               <label htmlFor="minutes">Minutes Meditated</label>
               <input
+                required
                 className="form-input"
                 type="number"
                 name="minutes"
@@ -108,6 +108,7 @@ export class NewMoment extends React.Component {
             <div className="location">
               <label htmlFor="location">Location</label>
               <input
+                required
                 className="form-input"
                 type="text"
                 name="location"
@@ -126,6 +127,7 @@ export class NewMoment extends React.Component {
                 <li>
                   <label>
                     <input
+                      required
                       className={this.state.class}
                       type="radio"
                       name="time"
@@ -139,6 +141,7 @@ export class NewMoment extends React.Component {
                 <li>
                   <label>
                     <input
+                      required
                       className={this.state.class}
                       type="radio"
                       name="time"
@@ -152,6 +155,7 @@ export class NewMoment extends React.Component {
                 <li>
                   <label>
                     <input
+                      required
                       className={this.state.class}
                       type="radio"
                       name="time"
@@ -165,6 +169,7 @@ export class NewMoment extends React.Component {
                 <li>
                   <label>
                     <input
+                      required
                       className={this.state.class}
                       type="radio"
                       name="time"
@@ -178,6 +183,7 @@ export class NewMoment extends React.Component {
                 <li>
                   <label>
                     <input
+                      required
                       className={this.state.class}
                       type="radio"
                       name="time"
@@ -199,6 +205,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="mental"
@@ -212,6 +219,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="mental"
@@ -225,6 +233,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="mental"
@@ -238,6 +247,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="mental"
@@ -258,6 +268,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="environmental"
@@ -271,6 +282,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="environmental"
@@ -284,6 +296,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="environmental"
@@ -297,6 +310,7 @@ export class NewMoment extends React.Component {
               <li>
                 <label>
                   <input
+                    required
                     className={this.state.class}
                     type="radio"
                     name="environmental"

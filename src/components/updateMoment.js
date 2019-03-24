@@ -34,17 +34,12 @@ export class UpdateMoment extends React.Component {
   }
 
   render() {
-    let requiredInput;
-    if (this.state.validateDisplay) {
-      requiredInput = <div className={styles.validate}>Required</div>;
-    }
-
     return (
       <div className="moment">
         <form className="updateForm" onSubmit={this.handleSubmit}>
-          {requiredInput}
           <div className="divTableRow">
             <input
+              required
               className="divTableCell editing"
               name="date"
               type="date"
@@ -54,6 +49,7 @@ export class UpdateMoment extends React.Component {
               onChange={e => this.handleInput(e, 'date')}
             />
             <input
+              required
               className="divTableCell editing"
               name="time"
               type="time"
@@ -63,6 +59,7 @@ export class UpdateMoment extends React.Component {
               onChange={e => this.handleInput(e, 'time')}
             />
             <input
+              required
               className="divTableCell editing"
               name="minutes"
               type="number"
@@ -73,6 +70,7 @@ export class UpdateMoment extends React.Component {
               onChange={e => this.handleInput(e, 'minutes')}
             />
             <input
+              required
               className="divTableCell location editing"
               name="location"
               type="text"
