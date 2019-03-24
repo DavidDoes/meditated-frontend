@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { updateMoment } from '../actions/moments';
 import Select from 'react-select';
+import styles from '../styles/selector-styles';
 
 export class UpdateMoment extends React.Component {
   constructor(props) {
@@ -52,9 +53,11 @@ export class UpdateMoment extends React.Component {
           <div className="divTableRow">
             <span className="divTableCell">{this.props.date}</span>
             <Select
+              className="divTableCell editing react-selector-container"
+              classNamePrefix="react-selector"
+              styles={styles}
               options={options}
               name="time"
-              // ref={input => (this.textInput = input)}
               placeholder={this.state.time}
               value={this.state.value}
               onChange={this.handleTime}
