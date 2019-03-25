@@ -2,6 +2,36 @@ input.divTableRow.editing {
   max-width: 50px;
 }
 
+input.divTableCell {
+  border-radius: 2px;
+}
+
 .editing {
   font-size: 12px;
+}
+
+.react-selector-container {
+  max-height: 32px;
+  min-width: 110px;
+}
+
+.react-selector__control {
+  border-radius: 2px;
+}
+
+.react-selector__indicator-separator {
+  max-height: 32px;
+}
+
+.react-selector__indicator {
+  padding: 0;
+}
+
+.react-selector__value-container {
+  font-size: 12px;
+}
+
+.react-selector__menu {
+  font-size: 12px;
+  color: #91658d;
 }
