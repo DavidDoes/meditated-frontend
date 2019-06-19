@@ -29,9 +29,17 @@ export class NewMoment extends React.Component {
 
   handleDate = date => this.setState({ date });
 
-  handleInput(event, key) {
+  // store minutes
+  handleMinutes(event, key) {
     this.setState({
-      [key]: event.target.value
+      [key]: event.target.value.substr(0, 3)
+    });
+  }
+
+  // store location
+  handleLocation(event, key) {
+    this.setState({
+      [key]: event.target.value.substr(0, 15)
     });
   }
 
@@ -105,7 +113,7 @@ export class NewMoment extends React.Component {
                 name="minutes"
                 placeholder="10"
                 value={this.state.minutes}
-                onChange={e => this.handleInput(e, 'minutes')}
+                onChange={e => this.handleMinutes(e, 'minutes')}
                 maxLength="3"
               />
             </div>
@@ -119,7 +127,7 @@ export class NewMoment extends React.Component {
                 name="location"
                 placeholder="Bedroom"
                 value={this.state.location}
-                onChange={e => this.handleInput(e, 'location')}
+                onChange={e => this.handleLocation(e, 'location')}
                 maxLength="25"
               />
             </div>
