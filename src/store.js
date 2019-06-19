@@ -18,6 +18,7 @@ const store = createStore(
 );
 
 // Hydrate the authToken from localStorage if it exist
+// https://courses.thinkful.com/react-001v3/assignment/4.3
 const authToken = loadAuthToken();
 if (authToken) {
   const token = authToken;

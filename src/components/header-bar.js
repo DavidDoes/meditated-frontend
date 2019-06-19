@@ -70,6 +70,9 @@ export class HeaderBar extends React.Component {
   }
 }
 
+// explain how diff parts should be inserted into props of component.
+// each key in returned object is single prop that's added to wrapped component.
+// loggedIn` will be part of this component's state
 const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
