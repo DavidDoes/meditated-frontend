@@ -36,10 +36,17 @@ export class NewMoment extends React.Component {
     });
   }
 
-  // store location
   handleLocation(event, key) {
+    // capitalize first letter of each word of input
+    let text = event.target.value
+      .toLowerCase()
+      .split(' ')
+      .map(s => s.charAt(0).toUpperCase() + s.substr(1))
+      .join(' ');
+
+    // store location in state
     this.setState({
-      [key]: event.target.value.substr(0, 15)
+      [key]: text.substr(0, 15)
     });
   }
 
