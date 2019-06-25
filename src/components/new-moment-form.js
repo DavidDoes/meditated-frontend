@@ -118,6 +118,7 @@ export class NewMoment extends React.Component {
                 className="form-input"
                 type="number"
                 name="minutes"
+                min="1"
                 placeholder="10"
                 value={this.state.minutes}
                 onChange={e => this.handleMinutes(e, 'minutes')}
