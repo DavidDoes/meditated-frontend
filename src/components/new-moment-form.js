@@ -20,6 +20,7 @@ export class NewMoment extends React.Component {
     };
     this.baseState = this.state; // store base state for future
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setLocation = this.setLocation.bind(this);
   }
 
   // reset to base state
@@ -36,17 +37,9 @@ export class NewMoment extends React.Component {
     });
   }
 
-  handleLocation(event, key) {
-    // capitalize first letter of each word of input
-    let text = event.target.value
-      .toLowerCase()
-      .split(' ')
-      .map(s => s.charAt(0).toUpperCase() + s.substr(1))
-      .join(' ');
-
-    // store location in state
+  setLocation(newLocation) {
     this.setState({
-      [key]: text.substr(0, 15)
+      location: newLocation
     });
   }
 
@@ -127,8 +120,8 @@ export class NewMoment extends React.Component {
             </div>
 
             <div className="location">
-              <MomentsMenu />
-              <label htmlFor="location">Location</label>
+              <MomentsMenu setLocation={this.setLocation} location={this.state.location} />
+              {/* <label htmlFor="location">Location</label>
               <input
                 required
                 className="form-input"
@@ -138,7 +131,7 @@ export class NewMoment extends React.Component {
                 value={this.state.location}
                 onChange={e => this.handleLocation(e, 'location')}
                 maxLength="25"
-              />
+              /> */}
             </div>
 
             <div className="date">
