@@ -23,6 +23,7 @@ class MomentsMenu extends React.Component {
     if (this.props.authToken) {
       getMoments(this.props.authToken);
     }
+    // this.checkIfDuplicate(this.props.moments);
   }
 
   showDropdownMenu(event) {
@@ -62,6 +63,14 @@ class MomentsMenu extends React.Component {
     this.props.setLocation(event.target.innerHTML, 'location');
   }
 
+  checkIfDuplicate(moments) {
+    const location = moments.map(moment => moment.location);
+    let locationsList = [...new Set(location)];
+    console.log(locationsList);
+
+    return locationsList;
+  }
+
   render() {
     let locations = []
       .concat(this.props.moments)
@@ -71,6 +80,7 @@ class MomentsMenu extends React.Component {
           {moment.location}
         </li>
       ));
+    console.log('locations', locations);
 
     return (
       <div className="dropdown">
