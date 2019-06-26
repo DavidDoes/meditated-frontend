@@ -48,13 +48,6 @@ class MomentsMenu extends React.Component {
     );
   }
 
-  selectLocation(event) {
-    // this.props.handleLocation(event, 'location');
-    this.setState({
-      location: event.target.innerHTML
-    });
-  }
-
   handleTextFieldChange(event, key) {
     let location = event.target.value;
     let text = location // capitalize first letter
