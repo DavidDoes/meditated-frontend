@@ -64,14 +64,31 @@ class MomentsMenu extends React.Component {
   }
 
   checkIfDuplicate(moments) {
-    const location = moments.map(moment => moment.location);
-    let locationsList = [...new Set(location)];
-    console.log(locationsList);
+    let momentsList = [];
+    moments.forEach(({ id, location }) =>
+      // console.log('id, location', { id, location })
+      momentsList.push({ id, location })
+    );
+    console.log(momentsList);
 
-    return locationsList;
+    let uniqueList = [...new Set(momentsList.map(moment => moment.location))];
+    return uniqueList;
   }
 
+  // how to get parsed list to dropdown menu?
+  //
   render() {
+    // this.checkIfDuplicate(this.props.moments);
+    let momentsList = [];
+    this.props.moments.forEach(({ id, location }) =>
+      // console.log('id, location', { id, location })
+      momentsList.push({ id, location })
+    );
+    console.log(momentsList);
+
+    let uniqueList = [...new Set(momentsList.map(moment => moment.location))];
+    console.log(uniqueList);
+
     let locations = []
       .concat(this.props.moments)
       .sort((a, b) => a.date < b.date)
@@ -80,7 +97,6 @@ class MomentsMenu extends React.Component {
           {moment.location}
         </li>
       ));
-    console.log('locations', locations);
 
     return (
       <div className="dropdown">
