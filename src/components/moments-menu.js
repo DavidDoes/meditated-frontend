@@ -61,6 +61,7 @@ class MomentsMenu extends React.Component {
 
   handleListClick(event, key) {
     this.props.setLocation(event.target.innerHTML, 'location');
+    console.log(event.target.innerHTML);
   }
 
   // checkIfDuplicate(moments) {
@@ -83,7 +84,9 @@ class MomentsMenu extends React.Component {
     let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
     let dropdownList = Array.from(uniqueSet);
     let menu = dropdownList.map(location => (
-      <li key={Math.floor(Math.random() * 10000)}>{location}</li>
+      <li key={Math.floor(Math.random() * 10000)} onClick={this.handleListClick}>
+        {location}
+      </li>
     ));
     console.log(menu);
 
