@@ -23,7 +23,6 @@ class MomentsMenu extends React.Component {
     if (this.props.authToken) {
       getMoments(this.props.authToken);
     }
-    // this.checkIfDuplicate(this.props.moments);
   }
 
   showDropdownMenu(event) {
@@ -64,19 +63,8 @@ class MomentsMenu extends React.Component {
     console.log(event.target.innerHTML);
   }
 
-  // checkIfDuplicate(moments) {
-  //   let momentsList = [];
-  //   moments.forEach(({ id, location }) =>
-  //     // console.log('id, location', { id, location })
-  //     momentsList.push({ id, location })
-  //   );
-  //   console.log(momentsList);
-
-  //   let uniqueList = [...new Set(momentsList.map(moment => moment.location))];
-  //   return uniqueList;
-  // }
-
-  // clicked item not going to state
+  // TO-DO:
+  // - onFocus - menu should appear when tabbed to and when clicked to
 
   render() {
     let momentsList = [];
@@ -88,16 +76,6 @@ class MomentsMenu extends React.Component {
         {location}
       </li>
     ));
-    console.log(menu);
-
-    // let locations = []
-    //   .concat(this.props.moments)
-    //   .sort((a, b) => a.date < b.date)
-    //   .map(moment => (
-    //     <li key={moment.id} onClick={this.handleListClick}>
-    //       {moment.location}
-    //     </li>
-    //   ));
 
     return (
       <div className="dropdown">
