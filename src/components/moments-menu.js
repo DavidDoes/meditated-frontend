@@ -63,40 +63,38 @@ class MomentsMenu extends React.Component {
     this.props.setLocation(event.target.innerHTML, 'location');
   }
 
-  checkIfDuplicate(moments) {
-    let momentsList = [];
-    moments.forEach(({ id, location }) =>
-      // console.log('id, location', { id, location })
-      momentsList.push({ id, location })
-    );
-    console.log(momentsList);
+  // checkIfDuplicate(moments) {
+  //   let momentsList = [];
+  //   moments.forEach(({ id, location }) =>
+  //     // console.log('id, location', { id, location })
+  //     momentsList.push({ id, location })
+  //   );
+  //   console.log(momentsList);
 
-    let uniqueList = [...new Set(momentsList.map(moment => moment.location))];
-    return uniqueList;
-  }
+  //   let uniqueList = [...new Set(momentsList.map(moment => moment.location))];
+  //   return uniqueList;
+  // }
 
-  // how to get parsed list to dropdown menu?
-  //
+  // clicked item not going to state
+
   render() {
-    // this.checkIfDuplicate(this.props.moments);
     let momentsList = [];
-    this.props.moments.forEach(({ id, location }) =>
-      // console.log('id, location', { id, location })
-      momentsList.push({ id, location })
-    );
-    console.log(momentsList);
+    this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
+    let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
+    let dropdownList = Array.from(uniqueSet);
+    let menu = dropdownList.map(location => (
+      <li key={Math.floor(Math.random() * 10000)}>{location}</li>
+    ));
+    console.log(menu);
 
-    let uniqueList = [...new Set(momentsList.map(moment => moment.location))];
-    console.log(uniqueList);
-
-    let locations = []
-      .concat(this.props.moments)
-      .sort((a, b) => a.date < b.date)
-      .map(moment => (
-        <li key={moment.id} onClick={this.handleListClick}>
-          {moment.location}
-        </li>
-      ));
+    // let locations = []
+    //   .concat(this.props.moments)
+    //   .sort((a, b) => a.date < b.date)
+    //   .map(moment => (
+    //     <li key={moment.id} onClick={this.handleListClick}>
+    //       {moment.location}
+    //     </li>
+    //   ));
 
     return (
       <div className="dropdown">
@@ -113,7 +111,8 @@ class MomentsMenu extends React.Component {
           maxLength="20"
           autoComplete="off"
         />
-        {this.state.displayMenu ? <ul>{locations}</ul> : null}
+        {/* {this.state.displayMenu ? <ul>{locations}</ul> : null} */}
+        {this.state.displayMenu ? <ul>{menu}</ul> : null}
       </div>
     );
   }
