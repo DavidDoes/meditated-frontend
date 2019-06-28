@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import keyIndex from 'react-key-index';
 
 import { getMoments } from '../actions/moments';
 
@@ -50,7 +49,7 @@ class MomentsMenu extends React.Component {
     );
   }
 
-  handleTextFieldChange(event, key) {
+  handleTextFieldChange(event) {
     let location = event.target.value;
     let text = location // capitalize first letter
       .toLowerCase()
@@ -60,19 +59,14 @@ class MomentsMenu extends React.Component {
     this.props.setLocation(text, 'location');
   }
 
-  handleListClick(event, key) {
+  handleListClick(event) {
     this.props.setLocation(event.target.innerHTML, 'location');
-    console.log(event.target.innerHTML);
   }
-
-  // TO-DO:
-  // - onFocus - menu should appear when tabbed to and when clicked to
 
   render() {
     let momentsList = [];
     this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
     let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
-    console.log(uniqueSet);
 
     // sort list alpha, map to render
     let dropdownMenu = uniqueSet

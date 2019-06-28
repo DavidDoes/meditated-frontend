@@ -121,17 +121,6 @@ export class NewMoment extends React.Component {
 
             <div className="location">
               <MomentsMenu setLocation={this.setLocation} location={this.state.location} />
-              {/* <label htmlFor="location">Location</label>
-              <input
-                required
-                className="form-input"
-                type="text"
-                name="location"
-                placeholder="Bedroom"
-                value={this.state.location}
-                onChange={e => this.handleLocation(e, 'location')}
-                maxLength="25"
-              /> */}
             </div>
 
             <div className="date">
