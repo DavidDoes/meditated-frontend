@@ -1,14 +1,14 @@
 .dropdown {
   position: relative;
   display: inline-block;
+  z-index: 999;
 }
 .dropdown ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   top: 45px;
-  right: 0px;
-  width: 200px;
+  width: 100%;
   background-color: white;
   font-weight: bold;
   position: absolute;
@@ -20,16 +20,22 @@
   color: #000;
   text-decoration: none;
 }
+
 .dropdown li {
+  font-size: 18px;
   padding: 8px 16px;
   border-bottom: 1px solid #e5e5e5;
+  background-color: #f3eaff;
+  color: #9784b5;
+  margin-top: 0px !important;
 }
 .dropdown li:last-child {
   border-bottom: none;
 }
 .dropdown li:hover {
-  background-color: #e5e5e5;
-  color: white;
+  color: #f3eaff;
+  background-color: #9784b5;
+  cursor: pointer;
 }
 .dropdown-button {
   width: 178px;
