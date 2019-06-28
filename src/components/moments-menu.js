@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import keyIndex from 'react-key-index';
+
 import { getMoments } from '../actions/moments';
 
 import '../styles/dropdown.css';
@@ -70,12 +72,20 @@ class MomentsMenu extends React.Component {
     let momentsList = [];
     this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
     let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
-    let dropdownList = Array.from(uniqueSet);
-    let menu = dropdownList.map(location => (
-      <li key={Math.floor(Math.random() * 10000)} onClick={this.handleListClick}>
-        {location}
-      </li>
-    ));
+    console.log(uniqueSet);
+
+    // sort list alpha, map to render
+    let dropdownMenu = uniqueSet
+      .sort((a, b) => {
+        if (a < b) return -1;
+        else if (a > b) return 1;
+        return 0;
+      })
+      .map((location, index) => (
+        <li key={index} onClick={this.handleListClick}>
+          {location}
+        </li>
+      ));
 
     return (
       <div className="dropdown">
@@ -92,8 +102,7 @@ class MomentsMenu extends React.Component {
           maxLength="20"
           autoComplete="off"
         />
-        {/* {this.state.displayMenu ? <ul>{locations}</ul> : null} */}
-        {this.state.displayMenu ? <ul>{menu}</ul> : null}
+        {this.state.displayMenu ? <ul>{dropdownMenu}</ul> : null}
       </div>
     );
   }
