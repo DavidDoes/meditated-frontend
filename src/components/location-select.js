@@ -1,52 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
 import { getMoments } from '../actions/moments';
 
-import '../styles/dropdown.css';
+// import Select from 'react-select';
+// import Creatable from 'react-select/creatable';
 
-class MomentsMenu extends React.Component {
+const options = {};
+
+class LocationSelect extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      displayMenu: false,
       location: ''
     };
-
-    this.showDropdownMenu = this.showDropdownMenu.bind(this);
-    this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
-    this.handleTextFieldChange = this.handleTextFieldChange.bind(this);
-    this.handleListClick = this.handleListClick.bind(this);
   }
 
   componentDidMount() {
     if (this.props.authToken) {
       getMoments(this.props.authToken);
     }
-  }
-
-  showDropdownMenu(event) {
-    event.preventDefault();
-    this.setState(
-      {
-        displayMenu: true
-      },
-      () => {
-        document.addEventListener('click', this.hideDropdownMenu);
-      }
-    );
-  }
-
-  hideDropdownMenu() {
-    this.setState(
-      {
-        displayMenu: false
-      },
-      () => {
-        document.removeEventListener('click', this.hideDropdownMenu);
-      }
-    );
   }
 
   handleTextFieldChange(event) {
@@ -59,8 +31,8 @@ class MomentsMenu extends React.Component {
     this.props.setLocation(text, 'location');
   }
 
-  handleListClick(event) {
-    this.props.setLocation(event.target.innerHTML, 'location');
+  updateField() {
+    this.setState();
   }
 
   render() {
@@ -68,36 +40,42 @@ class MomentsMenu extends React.Component {
     this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
     let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
 
+    console.log('uniqueSet', uniqueSet);
+    console.log('this.state', this.state);
+
     // sort list alpha, map to render
-    let dropdownMenu = uniqueSet
+    let sortedList = uniqueSet
       .sort((a, b) => {
         if (a < b) return -1;
         else if (a > b) return 1;
         return 0;
       })
-      .map((location, index) => (
-        <li key={index} onClick={this.handleListClick}>
-          {location}
-        </li>
-      ));
+      .map((location, index) => <option key={index}>{location}</option>);
 
+    console.log('sortedList', sortedList);
+
+    // store locations to state
     return (
       <div className="dropdown">
         <label htmlFor="location">Location</label>
         <input
           required
-          onFocus={this.showDropdownMenu}
-          onClick={this.showDropdownMenu}
+          ref=""
+          onChange={event => {
+            this.updateField();
+          }}
           className="form-input"
           type="text"
           name="location"
-          placeholder="Bedroom"
+          placeholder="create or choose"
           value={this.props.location}
           onChange={event => this.handleTextFieldChange(event, 'location')}
           maxLength="20"
           autoComplete="off"
         />
-        {this.state.displayMenu ? <ul>{dropdownMenu}</ul> : null}
+        <select onChange={event => this.handleTextFieldChange(event, 'location')}>
+          {sortedList}
+        </select>
       </div>
     );
   }
@@ -108,4 +86,4 @@ const mapStateToProps = state => ({
   authToken: state.auth.authToken
 });
 
-export default connect(mapStateToProps)(MomentsMenu);
+export default connect(mapStateToProps)(LocationSelect);
