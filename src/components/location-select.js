@@ -2,9 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMoments } from '../actions/moments';
 
-// import Select from 'react-select';
-// import Creatable from 'react-select/creatable';
-
 const options = {};
 
 class LocationSelect extends React.Component {
