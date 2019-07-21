@@ -2,8 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMoments } from '../actions/moments';
 
-const options = {};
-
 class LocationSelect extends React.Component {
   constructor(props) {
     super(props);
