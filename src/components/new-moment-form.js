@@ -3,7 +3,11 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../styles/new-moment-form.css';
 import { newMoment } from '../actions/moments';
+<<<<<<< HEAD
 import LocationSelect from './location-select';
+=======
+import MomentsMenu from './moments-menu';
+>>>>>>> parent of e11908a... added select to form; pulls from moments list
 import DatePicker from 'react-date-picker';
 
 export class NewMoment extends React.Component {
@@ -120,7 +124,7 @@ export class NewMoment extends React.Component {
             </div>
 
             <div className="location">
-              <LocationSelect setLocation={this.setLocation} location={this.state.location} />
+              <MomentsMenu setLocation={this.setLocation} location={this.state.location} />
             </div>
 
             <div className="date">
