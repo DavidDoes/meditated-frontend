@@ -64,6 +64,7 @@ class LocationSelect extends React.Component {
           name="location"
           placeholder="create or choose"
           value={this.props.location}
+          // eslint-disable-next-line
           onChange={event => this.handleTextFieldChange(event, 'location')}
           maxLength="20"
           autoComplete="off"
