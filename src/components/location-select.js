@@ -31,9 +31,6 @@ class LocationSelect extends React.Component {
     this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
     let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
 
-    console.log('uniqueSet', uniqueSet);
-    console.log('this.state', this.state);
-
     // sort list alpha, map to render
     let sortedList = uniqueSet
       .sort((a, b) => {
