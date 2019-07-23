@@ -26,10 +26,6 @@ class LocationSelect extends React.Component {
     this.props.setLocation(text, 'location');
   }
 
-  updateField() {
-    this.setState();
-  }
-
   render() {
     let momentsList = [];
     this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
@@ -56,9 +52,6 @@ class LocationSelect extends React.Component {
         <input
           required
           ref=""
-          onChange={event => {
-            this.updateField();
-          }}
           className="form-input"
           type="text"
           name="location"
