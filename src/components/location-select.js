@@ -40,8 +40,6 @@ class LocationSelect extends React.Component {
       })
       .map((location, index) => <option key={index}>{location}</option>);
 
-    console.log('sortedList', sortedList);
-
     // store locations to state
     return (
       <div className="dropdown">
