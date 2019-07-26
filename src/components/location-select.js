@@ -27,17 +27,16 @@ class LocationSelect extends React.Component {
   }
 
   render() {
+    // - grab just `id` and `location`, push into empty array
+    // - define new Set so that we get just 1 of each location
+    // - .sort() that new set; .sort() is alphabetical by default
     let momentsList = [];
     this.props.moments.forEach(({ id, location }) => momentsList.push({ id, location }));
     let uniqueSet = [...new Set(momentsList.map(moment => moment.location))];
 
-    // sort list alpha, map to render
+    // sort list alphabetically, map to render
     let sortedList = uniqueSet
-      .sort((a, b) => {
-        if (a < b) return -1;
-        else if (a > b) return 1;
-        return 0;
-      })
+      .sort()
       .map((location, index) => <option key={index}>{location}</option>);
 
     // store locations to state
