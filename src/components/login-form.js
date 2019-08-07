@@ -14,6 +14,8 @@ export class LoginForm extends React.Component {
   }
 
   render() {
+    console.log('this.props.error login:', this.props.error); // Incorrect username or password
+
     let error;
     if (this.props.error) {
       error = (
@@ -22,6 +24,7 @@ export class LoginForm extends React.Component {
         </div>
       );
     }
+
     return (
       <form
         className="login-form"

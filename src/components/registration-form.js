@@ -6,6 +6,8 @@ import Input from './input';
 import { required, nonEmpty, matches, length, isTrimmed } from '../validators';
 import '../styles/login-form.css';
 
+// import { SubmissionError } from 'redux-form';
+
 import LoginButton from './login-button';
 
 const passwordLength = length({ min: 10, max: 72 });
@@ -13,14 +15,29 @@ const matchesPassword = matches('password');
 
 export class RegistrationForm extends React.Component {
   onSubmit(values) {
-    const { username, password, firstName, lastName } = values;
-    const user = { username, password, firstName, lastName };
+    const { username, password } = values;
+    const user = { username, password };
     return this.props
       .dispatch(registerUser(user))
-      .then(() => this.props.dispatch(login(username, password)));
+      .then(() => this.props.dispatch(login(username, password)))
+      .catch(err => {
+        console.log('err:', err);
+        const { name, message, location } = err;
+        if (name === 'SubmissionError') {
+          // Convert ValidationErrors into SubmissionErrors for Redux Form
+          // return Promise.reject(
+          //   new SubmissionError({
+          //     [location]: message
+          //   })
+          // );
+          console.log('error from inside return');
+        }
+      });
   }
 
   render() {
+    console.log('this.props.error:', this.props.error);
+
     let error;
     if (this.props.error) {
       error = (
@@ -29,6 +46,7 @@ export class RegistrationForm extends React.Component {
         </div>
       );
     }
+
     return (
       <form
         className="login-form"
