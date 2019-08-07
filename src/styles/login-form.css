@@ -12,3 +12,7 @@
 .demouser {
   font-size: 12px;
 }
+
+.form-error {
+  background-color: #3e3f68;
+}
