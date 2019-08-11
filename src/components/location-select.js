@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getMoments } from '../actions/moments';
 
+import Select from 'react-select';
+
 class LocationSelect extends React.Component {
   constructor(props) {
     super(props);
@@ -41,8 +43,7 @@ class LocationSelect extends React.Component {
 
     // store locations to state
     return (
-      <div className="dropdown">
-        <label htmlFor="location">Location</label>
+      <div>
         <input
           required
           ref=""

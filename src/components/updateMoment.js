@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { updateMoment } from '../actions/moments';
 import Select from 'react-select';
+import LocationSelect from './location-select';
 
 import '../styles/update-moment.css';
 
@@ -74,17 +75,9 @@ export class UpdateMoment extends React.Component {
               value={this.state.minutes}
               onChange={e => this.handleInput(e, 'minutes')}
             />
-            <input
-              required
-              className="divTableCell location editing"
-              name="location"
-              type="text"
-              maxLength="25"
-              ref={input => (this.textInput = input)}
-              placeholder=""
-              value={this.state.location}
-              onChange={e => this.handleInput(e, 'location')}
-            />
+            <div className="divTableCell">
+              <LocationSelect setLocation={this.setLocation} location={this.state.location} />
+            </div>
             <span className="divTableCell">{this.props.mental}</span>
             <span className="divTableCell">{this.props.environmental}</span>
             <span className="divTableCell edit-column">

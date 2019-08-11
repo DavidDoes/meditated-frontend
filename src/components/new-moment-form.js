@@ -119,7 +119,8 @@ export class NewMoment extends React.Component {
               />
             </div>
 
-            <div className="location">
+            <div className="location dropdown">
+              <label htmlFor="location">Location</label>
               <LocationSelect setLocation={this.setLocation} location={this.state.location} />
             </div>
 
