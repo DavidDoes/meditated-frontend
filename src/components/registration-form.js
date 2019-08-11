@@ -24,11 +24,14 @@ export class RegistrationForm extends React.Component {
     let error;
     if (this.props.error) {
       error = (
-        <div className="form-error" aria-live="polite">
-          {this.props.error}
+        <div>
+          <p className="form-error" aria-live="polite">
+            {this.props.error}
+          </p>
         </div>
       );
     }
+
     return (
       <form
         className="login-form"

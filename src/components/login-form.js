@@ -14,13 +14,13 @@ export class LoginForm extends React.Component {
   }
 
   render() {
-    console.log('this.props.error login:', this.props); // Incorrect username or password
-
     let error;
     if (this.props.error) {
       error = (
-        <div className="form-error" aria-live="polite">
-          {this.props.error}
+        <div>
+          <p className="form-error" aria-live="polite">
+            {this.props.error}
+          </p>
         </div>
       );
     }
@@ -31,6 +31,7 @@ export class LoginForm extends React.Component {
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         {error}
+
         <label htmlFor="username">Username</label>
         <span className="demouser">Demo Username: demouser</span>
         <Field
