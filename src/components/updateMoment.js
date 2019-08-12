@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { updateMoment } from '../actions/moments';
-import Select from 'react-select';
+
+import TimeSelect from './time-select';
 import LocationSelect from './location-select';
 
 import '../styles/update-moment.css';
@@ -21,6 +22,8 @@ export class UpdateMoment extends React.Component {
       validateDisplay: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setLocation = this.setLocation.bind(this);
+    this.handleTime = this.handleTime.bind(this);
   }
 
   handleInput(event, key) {
@@ -29,10 +32,16 @@ export class UpdateMoment extends React.Component {
     });
   }
 
-  handleTime = option => {
-    const time = option.value;
+  setLocation(newLocation) {
+    this.setState({
+      location: newLocation
+    });
+  }
+
+  handleTime(event) {
+    let time = event.target.value;
     this.setState({ time });
-  };
+  }
 
   handleSubmit(event) {
     event.preventDefault();
@@ -42,28 +51,14 @@ export class UpdateMoment extends React.Component {
   }
 
   render() {
-    const options = [
-      { value: 'Early Morning', label: 'Early Morning' },
-      { value: 'Morning', label: 'Morning' },
-      { value: 'Afternoon', label: 'Afternoon' },
-      { value: 'Evening', label: 'Evening' },
-      { value: 'Bedtime', label: 'Bedtime' }
-    ];
     return (
       <div className="moment">
         <form className="updateForm" onSubmit={this.handleSubmit}>
           <div className="divTableRow">
             <span className="divTableCell">{this.props.date}</span>
-            <Select
-              className="divTableCell react-selector-container"
-              classNamePrefix="react-selector"
-              // styles={styles}
-              options={options}
-              name="time"
-              placeholder={this.state.time}
-              value={this.state.value}
-              onChange={this.handleTime}
-            />
+            <div className="divTableCell">
+              <TimeSelect handleTime={this.handleTime} time={this.state.time} />
+            </div>
             <input
               required
               className="divTableCell editing"
