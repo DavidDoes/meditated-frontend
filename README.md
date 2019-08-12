@@ -53,3 +53,9 @@
 - Time and date are auto-filled.
 - User's mood is filled from previous prompt.
 - A Moment is created at the end, rather than user filling in the form.
+
+## Changelog
+
+_Aug 11, 2019_ - Add <select> to `updateMoment` component for `time` and `location`.
+_Aug 6, 2019_ - Error alerts for forms
+_Jul 15, 2019_ - Add <select> for choosing pre-existing location instead of creating new one every time.
