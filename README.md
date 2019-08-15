@@ -1,4 +1,4 @@
-# Meditated
+# # Meditated
 
 ## Overview
 
@@ -44,14 +44,14 @@
 
 **Graphs**
 
-- Use data collected from user's Moments to create graphs, giving the user a visual representation.
+- Use data collected from user’s Moments to create graphs, giving the user a visual representation.
 
 **Meditation Timer**
 
 - User is able to select length of timer with notification at end, or select a stop-watch style timer that they end manually.
 - User puts in their location and _Mental_ and _Environmental_ distractions.
 - Time and date are auto-filled.
-- User's mood is filled from previous prompt.
+- User’s mood is filled from previous prompt.
 - A Moment is created at the end, rather than user filling in the form.
 
 ## Changelog
