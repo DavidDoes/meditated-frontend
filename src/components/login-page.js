@@ -7,7 +7,6 @@ import '../styles/login-page.css';
 
 export function LoginPage(props) {
   const loadMsg = () => {
-    console.log(props.loading);
     if (props.loading) {
       return (
         <div className="load-msg">
