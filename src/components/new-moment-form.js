@@ -16,7 +16,8 @@ export class NewMoment extends React.Component {
       location: '',
       mental: '',
       environmental: '',
-      redirectToDashboard: false
+      redirectToDashboard: false,
+      meditated: false
     };
     this.baseState = this.state; // store base state for future
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -90,14 +91,22 @@ export class NewMoment extends React.Component {
 
     this.props.dispatch(newMoment(this.props.authToken, momentObj));
     this.setState({
-      redirectToDashboard: true
+      redirectToDashboard: true,
+      meditated: true
     });
   }
 
   render() {
     // redirect to dashboard on successful submit
     if (this.state.redirectToDashboard) {
-      return <Redirect to="/dashboard" />;
+      return (
+        <Redirect
+          to={{
+            pathname: '/dashboard',
+            state: { fromRedirect: true }
+          }}
+        />
+      );
     }
 
     return (
@@ -344,7 +353,8 @@ export class NewMoment extends React.Component {
 
 const mapStateToProps = state => ({
   moments: state.moments.moments,
-  authToken: state.auth.authToken
+  authToken: state.auth.authToken,
+  meditated: state.moments.meditated
 });
 
 export default connect(mapStateToProps)(NewMoment);

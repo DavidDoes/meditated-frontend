@@ -8,10 +8,28 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    let successMsg;
+    const showSuccessMsg = () => {
+      successMsg = (
+        <div className="load-msg">
+          <h3>You meditated!</h3>
+        </div>
+      );
+    };
+
+    if (this.props.location.state !== undefined) {
+      console.log('props:', this.props);
+      const fromRedirect = this.props.location.state;
+      console.log('fromRedirect', fromRedirect);
+      if (fromRedirect) {
+        showSuccessMsg();
+      }
+    }
+
     return (
       <section className="container">
         <h2 className="page-title">Your Moments</h2>
-
+        {successMsg}
         <p>
           Use information about each moment to identify locations and times of day where you
           experience the least amount of distraction.
