@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "chroma-js": "^2.0.3",
     "jwt-decode": "^2.2.0",
     "normalize.css": "^8.0.1",
